@@ -1,0 +1,10 @@
+<!--pages/wait/wait.wxml-->
+
+
+    <image src='../../images/true.png' mode='widthFix' class='status'></image>
+    <text class='tips'>您的申请我们已收到！</text>
+    <text class='statuss'>请等待审核</text>
+    <view class='select-bens' bindtap='go_order'>
+        完成
+    </view>
+

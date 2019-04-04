@@ -1,0 +1,12 @@
+<!--pages/time/time.wxml-->
+<view class="countDownTimeView pull-left countDownAllView text-left">
+ 
+     <text class='over'>距离结束还剩：</text>
+ 
+     <text class="voteText countDownTimeText">{{countDownHour}}</text> :
+ 
+     <text class="voteText countDownTimeText">{{countDownMinute}}</text> :
+ 
+     <text class="voteText countDownTimeText">{{countDownSecond}}</text>
+ 
+</view>

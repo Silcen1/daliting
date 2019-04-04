@@ -1,0 +1,7 @@
+
+<image src='../../images/true.png' mode='widthFix' class='status'></image>
+<text class='tips'>评价成功！</text>
+<view class='select-bens' bindtap='go_index'>
+    返回首页
+</view>
+

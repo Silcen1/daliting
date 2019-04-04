@@ -1,0 +1,172 @@
+<view class='share'>
+    <swiper indicator-dots="false" autoplay="false" style='width:100%'>  
+          <swiper-item wx:for="{{banner_list}}" wx:key="{{index}}" style='width:100%'> 
+                  <image src="{{item.pic_url}}" mode='widthFix'/> 
+          </swiper-item>  
+    </swiper> 
+
+    <view class='share-nav' bindtap='go_search'>
+        <image src='../../images/share.png' mode='widthFix' class='share-icon'></image>
+        <view class='open' bindtap="open_search">
+          <image src='../../images/open.png' mode='widthFix' class='share-icon-open'></image>
+        </view>
+        <input placeholder='搜索你的商品' class='placeholder'></input>
+    </view>
+</view>
+
+
+<view class='select-icons'>
+    <view class='select-icon-item'>
+        <view class='select-items' bindtap='nav' wx:for="{{navlist}}" wx:key="{{index}}" data-item='{{item}}'>
+          <image src='{{item.pic_url}}' mode='widthFix'></image>
+          <view>{{item.name}}</view>
+        </view>
+    </view> 
+</view>
+
+<view class='git' bindtap='coupon_redemption'>
+
+    <image src='../../images/git.png' mode='widthFix' style='	width: 701rpx;'></image>
+
+</view>
+
+
+
+
+
+
+<view class='nav-tops' wx:if="{{pintuan_list.length!=0}}">
+  <view class='nav-titles'>
+    <text>超值拼团 </text>
+    <image src='../../images/sale.png' mode='widthFix'></image>
+    <view class='nav-counts'>5人拼团，1人 <text>免费</text> </view>
+  </view>
+
+  <view class='nav-mores' bindtap="go_more">
+        <text> 更多</text>
+        <image src='../../images/more-user.png' mode='widthFix'></image>
+  </view>
+</view>
+
+
+
+<view class = "scroll-view">
+    <scroll-view scroll-x style="width: auto;overflow:hidden;">
+        <view class = "select-item" bindtap="go_detail" wx:for="{{pintuan_list}}" wx:key="{{index}}" data-item="{{item}}" data-goods_id='{{item.goods_id}}' wx:if="{{index>=0&&index<=3}}">
+              <image src='{{item.cover_pic}}'  mode='widthFix'></image>
+              <view class='select-item-infos'>
+                {{item.name}}
+              </view>
+              <view>
+                <text class='noneys'><text class="min">￥</text>{{item.price}}</text>
+                <text class='noney-old'>￥{{item.original_price}}</text>
+              </view>
+        </view> 
+        
+    </scroll-view>
+</view>
+
+
+<view class='nav-tops' wx:if="{{kanjia_list.length!=0}}">
+  <view class='nav-titles'>
+    <text>砍价商品 </text>
+    <image src='../../images/sale.png' mode='widthFix'></image>
+  </view>
+  <view class='nav-mores' bindtap="go_bargain">
+        <text> 更多</text>
+        <image src='../../images/more-user.png' mode='widthFix'></image>
+  </view>
+
+</view>
+
+
+<view class = "scroll-view">
+    <scroll-view scroll-x style="width: auto;overflow:hidden;">
+        <view class = "select-item" bindtap='go_bargain_detail' wx:for="{{kanjia_list}}" wx:key="{{index}}" data-item="{{item}}" data-goods_id='{{item.goods_id}}' wx:if="{{index>=0&&index<=3}}">
+              <image src='{{item.cover_pic}}'  mode='widthFix'></image>
+              <view class='select-item-infos'>
+                {{item.name}}
+              </view>
+              <view>
+                <text class='noneys'><text class="min">￥</text>{{item.price}}</text>
+                <text class='noney-old'>￥{{item.original_price}}</text>
+              </view>
+        </view> 
+    </scroll-view>
+</view>
+
+
+
+<view class='nav-tops' wx:if="{{miaoshaing.length!=0}}">
+  <view class='nav-titles'>
+    <text>秒杀专场 </text>
+    <text class='nav-backword'>距结束<text class="nav-time">{{countDownHour}}</text>时<text class="nav-time">{{countDownMinute}}</text>分<text class="nav-time">{{countDownSecond}}</text>秒
+    </text>
+  </view>
+
+  <view class='nav-mores' bindtap='go_seckill'>
+        <text> 更多</text>
+        <image src='../../images/more-user.png' mode='widthFix'></image>
+  </view>
+</view>
+
+<view class='list-mores-nav'>
+
+
+    <view class='list-mores' bindtap="go_seckill_detail" wx:for="{{miaoshaing}}" wx:key="{{index}}" data-item="{{item}}" data-goods_id='{{item.goods_id}}' wx:if="{{index>=0&&index<=4}}">
+        <view class="list-mores-pic">
+          <image src='{{item.cover_pic}}' mode='widthFix'> </image>
+        </view>
+        <view class='list-more-sva'>
+            <text class='list-more-titles'>{{item.name}}</text>
+            <text class='list-times'>距结束{{countDownHour}}：{{countDownMinute}}：{{countDownSecond}}</text>
+
+            <view class='other-sav'>
+              <view>
+                  <text class='noney-sav'><text class="min">秒杀价￥</text>{{item.miaosha_price}}</text>
+                  <text class='old-sav'>数量{{item.miaosha_num}}</text>
+              </view>
+              <view class='select-btns'>
+                  <text class='counts'>已售{{item.sell_num}}件</text>
+                  <text class='count-btn'>立抢</text>
+              </view>
+            </view>
+        </view> 
+    </view>
+
+</view>
+
+
+
+
+
+<view class='nav-tops'>
+  <view class='nav-titles'>
+    <text>爆款</text>
+    <image src='../../images/host.png' mode='widthFix'></image>
+  </view>
+
+  <view class='nav-mores' bindtap='go_faddish'>
+        <text> 更多</text>
+        <image src='../../images/more-user.png' mode='widthFix'></image>
+  </view>
+</view>
+
+<view  class='list-store-box'>
+  <view class='list-items' bindtap='go_faddish_detail' wx:for="{{list.list}}" wx:key="{{index}}" data-item="{{item}}">
+          <image src='{{item.pic_url}}' mode='widthFix'></image>
+          <text>{{item.name}}</text>
+          <view class='other-info'>
+             <view>
+                <text class='noney'><text class="min">￥</text>{{item.price}}</text>
+                <text style='text-decoration: line-through'>￥{{item.original_price}}</text>
+             </view>
+              <text>已售{{item.sales}}</text>
+          </view>
+    </view>
+</view>
+
+
+
+
+

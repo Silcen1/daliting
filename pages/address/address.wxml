@@ -1,0 +1,29 @@
+<!--pages/address/address.wxml-->
+
+<block wx:if="{{addr.length!=0}}">
+
+  <view class='address-list' wx:for="{{addr}}" wx:key="{{index}}" catchtap='item_list' data-item="{{item}}">
+      <view class='item-list' catchtap='choose_default' data-index='{{index}}' data-item='{{item}}'>
+         <image src='{{item.is_default==1?"../../images/shop-car-true.png":"../../images/shop-car-false.png"}}' mode='widthFix'></image>
+        <text wx:if="{{item.is_default==1}}">默认</text>
+      </view>
+      <view class='messages'>
+        <text><text class="user_name">{{item.name}}</text>{{item.mobile}}</text>
+        <view>{{item.address}}</view>
+      </view>
+      <view class='edit-menu'>
+        <image src='../../images/close.png' mode='widthFix' catchtap="delete" data-item="{{item}}"></image>
+        <text catchtap='go_reset_address' data-item='{{item}}'>编辑</text>
+      </view> 
+  </view>
+  <view class='edit-btns' bindtap='go_edit_address'>
+    新增地址
+  </view>
+</block>
+<view wx:else class='select-top'>
+      <image src='../../images/address-status.png' style='width: 326rpx;margin-top:350rpx;' mode='widthFix'></image>
+      <text class='select-tops'>您还没有添加收货地址</text>
+      <view class='btns' bindtap='go_edit_address'>
+          新增地址
+      </view>
+</view>

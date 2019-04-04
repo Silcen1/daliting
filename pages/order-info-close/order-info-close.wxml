@@ -1,0 +1,104 @@
+<!--pages/order-info/order-info.wxml-->
+<view class='tops'>
+    <image src='../../images/top-image.png' mode='widthFix' class = "images-top"></image>
+    <view class='tops-margin'>
+      
+      <view class='text-images'>
+        <image src='../../images/icon5.png' mode='widthFix'></image>
+        <text>交易关闭  </text>
+      </view>
+ 
+      <text>交易已关闭！您的支付超时！</text>
+    </view>
+</view> 
+
+<view class='address'>
+
+    <image src='../../images/address-iocn.png' mode='widthFix'></image>
+
+    <view class='messages'>
+          <view class = "select-user">
+            <text>阿希</text>
+            <text>13500001234</text>
+          </view>
+
+          <view class='address-message'>
+            广东省广州市白云区白云公园别墅1335号房前台一楼
+          </view>
+    </view>
+
+
+
+
+</view>
+
+<view class='store'> 
+
+ <view class='store-tops'>
+    <image src='../../images/shop-car-logo.png' class='store-heade' mode='widthFix'></image>
+    <text>阿希专卖店</text>
+     <image src='../../images/shop-car-more.png' class='store-mores' mode='widthFix'></image>
+ </view> 
+
+  <view class='item-lists'>
+    <image src='{{list.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+    
+    <view class='item-conter'>
+        <view class='conter'>
+              {{list.list[0].goods_list[0].goods_name}}
+        </view>
+        <text>规格：{{list.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+    </view>
+
+    <view class='select-count'>
+      <text>￥{{list.list[0].goods_list[0].price}}</text>
+      <text>x {{list.list[0].goods_list[0].num}}</text>
+    </view> 
+
+  </view>
+
+</view>
+
+<view class='item-conters'>
+  <view class='select-items'>
+    <text>运费</text>
+    <text>￥{{list.list[0].express}}</text>
+  </view>
+
+  <view class='select-money'>
+
+    <text>合计</text>
+    <text class="moneys">￥{{list.list[0].goods_list[0].price}}</text>
+  
+  </view>
+
+</view>
+
+<view class='tops-tips'>  
+    <view class='top-titls'>
+        订单信息
+    </view>
+  
+    <view class='select-list'>
+        <text>下单时间</text>
+        <text>{{list.list[0].addtime}}</text>
+    </view>
+
+     <view class='select-list'>
+        <text>支付时间</text>
+        <text>2018-10-16  16:50</text>
+    </view>
+
+    
+     <view class='select-list'>
+        <text>关闭时间</text>
+        <text>2018-10-16  16:50</text>
+    </view>
+</view>
+
+
+<view class='list-order'>
+    <view class ="order-btns">
+        <view>联系商家</view>
+    </view>
+</view>

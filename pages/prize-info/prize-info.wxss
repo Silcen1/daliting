@@ -1,0 +1,96 @@
+/* pages/prize-info/prize-info.wxss */
+.top{
+  border-bottom: 1rpx solid #eee;
+  padding-left: 30rpx;
+}
+.top>text{
+  	font-family: PingFang-SC-Bold;
+    font-size: 36rpx;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 60rpx;
+    letter-spacing: 0px;
+    color: #0b0306;
+}
+.top-list{
+  height: 149rpx;
+  padding-top: 30rpx;
+  display: flex;
+}
+.top-list{
+
+}
+
+.list-messages{
+  flex: 1;
+  padding-left: 30rpx;
+}
+
+
+.top-list>image{
+  width: 120rpx;
+}
+
+.list-money{
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0px;
+	color: #999999;
+}
+.windows{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  width: 690rpx;
+	height: 479rpx;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 16rpx 0px 
+		rgba(0, 0, 0, 0.10);
+	border-radius: 25rpx;
+  margin-top: 21rpx;
+  padding-top: 5rpx;
+}
+.get-btns{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  width: 690rpx;
+	height: 88rpx;
+	background-color: #ff3300;
+	border-radius: 44rpx;
+	font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 88rpx;
+	letter-spacing: 0px;
+	color: #ffffff;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.list-userinput>text{
+  font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0px;
+	color: #000000;
+}
+.list-userinput{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 40rpx;
+  margin-top: 20rpx;
+}
+.user-input{
+  border-bottom: 1rpx solid #eee;
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0px;
+	color: #999999;
+}

@@ -1,0 +1,26 @@
+/* pages/user-sever/user-sever.wxss */
+.list-items{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 82rpx;
+  padding-right: 30rpx;
+  padding-left: 30rpx;
+  line-height: 82rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.list-items>image{
+  width: 30rpx;
+}
+.list-items>text{
+  font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal; 
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0px;
+	color: #333333;
+}
+.list-items .contact-button{
+  font-size:14rpx;
+}

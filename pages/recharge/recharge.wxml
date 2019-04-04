@@ -1,0 +1,20 @@
+<!--pages/recharge/recharge.wxml-->
+<view class='box'>
+    <view class='box-money'>
+        <text>充值金额</text>
+        <view class='money-box'>
+        
+          <text>¥</text>
+          <input value='500' class='money-munber'></input>
+        </view>
+
+        <view class='select-btn'>
+              <view class='select-btns' bindtap='select_btns'>
+              立即充值
+              </view>
+        
+        </view>
+
+
+    </view>
+</view>

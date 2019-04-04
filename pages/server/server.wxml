@@ -1,0 +1,93 @@
+<!--pages/server/server.wxml-->
+<view class='select-class'>
+
+    <view class='select-serve'>选择服务类型</view>
+    <!-- <view class='select-items'>
+          <view class='user-images'>
+          <view class='picure'>
+                <image src='../../images/shop-car-true.png' mode='widthFix' class='img1'></image>
+                <image src='../../images/shop-car-false.png' mode='widthFix' class='img2' hidden='{{isShow}}' bindtap='jump'></image>
+                </view>
+                <text>换货</text>   
+          </view>
+
+           <view class='user-images select-paddings'>
+           <view class='picure2'>
+                <image src='../../images/shop-car-false.png' mode='widthFix' class='img3'></image>
+                       <image src='../../images/shop-car-true.png' mode='widthFix' class='img4' hidden='{{isShow}}' bindtap='click'></image>   
+                       </view>
+                <text>退货退款</text>   
+          </view>
+    </view> -->
+
+<view class='select-get'> 
+        <view class='select-btn' bindtap='select_zfb' data-id='0'>
+          <image src='{{type==0?"../../images/shop-car-true.png":"../../images/shop-car-false.png"}}' mode='widthFix'></image>
+         换货
+        </view>
+ 
+           <view class='select-btn' bindtap='select_zfb' data-id='1'>
+          <image src='{{type==1?"../../images/shop-car-true.png":"../../images/shop-car-false.png"}}' mode='widthFix'> </image>
+       退货退款
+        </view>
+    </view>
+
+
+    <view class='select-serve margin-tops'>退款商品</view>
+
+    <view class='store-infos'>
+      <image src='../../images/store-info.png' mode='widthFix'></image>
+      <view class = "select-conter">
+        
+        <view class="messages">
+        
+       
+          <view> 创意实用闺蜜特别的浪漫小圣诞节暖手宝圣诞节暖手宝</view>
+          <text class= "message-rule">规格：白色  -  大</text>
+        </view>
+        <view class='select-box'>
+          <text class='moneys'>￥50</text>
+          <text class='counts'>x2</text>
+        </view>
+
+      </view>
+    </view>
+ 
+  <view class='select-serve margin-tops'>退款商品</view>
+  <view class='user-file'>
+    <view class='user-class'>
+      <textarea maxlength='40' placeholder='请输入退款原因...' placeholder-class='placeholder' class='placeholder-textarea'></textarea>
+      <!-- <view class='addfile-images'>
+        <image src='../../images/addfiles.png' mode='widthFix' class='addfile-images-image'></image>
+        </view> -->
+</view>
+<!-- 上传图片 -->
+<!-- 容器 -->
+<view class='ui_uploader_cell'>
+    <!-- 根据已选择的图片临时路径数组展示图片-->
+    <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
+        <!-- 删除-->
+        <icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red"/>
+        <!-- 图片-->
+        <image bindtap='showImg' data-index="{{index}}" src='{{item}}'></image>
+    </view>
+    <!-- 上传按钮+框 -->
+    <view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}">
+    <image src="../../images/addfiles.png"></image>
+    </view>
+ 
+    </view>
+  </view>
+
+  <view class='noney-boxs'>
+   <view class='tips-money '>退款金额</view>
+    <text>￥115</text>
+  </view>
+
+
+  <view class='btn-box' bindtap="go_submit">
+    提交
+  </view>
+
+
+</view>

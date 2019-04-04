@@ -1,0 +1,70 @@
+<view class='share'>
+    <view class='share-nav'>
+        <image src='../../images/share.png' mode='widthFix' class='share-icon'></image>
+        <view class='open'>
+          <image src='../../images/open.png' mode='widthFix' class='share-icon-open'></image>
+        </view>
+        <input placeholder='搜索你的商品' class='placeholder'></input>
+    </view>
+</view>
+
+
+<view class='class-box' wx:if="{{!issearch}}">
+
+    <view>
+    未搜索到<text style='color: #ff4719;'> “暖手宝”</text>相关商品
+    </view>
+
+
+</view>
+
+
+
+
+<view wx:else  class='list-store-box'>
+  
+
+    <view class='list-items'>
+          <image src='../../images/store-name.png' mode='widthFix'></image>
+          <text>创意实用闺蜜特别的浪漫小圣诞节暖手宝</text>
+          <view class='other-info'>
+             <view>
+                <text class='noney'>￥188</text>
+                <text style='text-decoration: line-through'>￥388</text>
+             </view>
+              <text>2人团</text>
+          </view>
+    </view>
+
+
+  <view class='list-items'>
+          <image src='../../images/store-name.png' mode='widthFix'></image>
+          <text>创意实用闺蜜特别的浪漫小圣诞节暖手宝</text>
+          <view class='other-info'>
+             <view>
+                <text class='noney'>￥188</text>
+                <text style='text-decoration: line-through'>￥388</text>
+             </view>
+              <text>2人团</text>
+          </view>
+    </view>
+
+
+  <view class='list-items'>
+          <image src='../../images/store-name.png' mode='widthFix'></image>
+          <text>创意实用闺蜜特别的浪漫小圣诞节暖手宝</text>
+          <view class='other-info'>
+             <view>
+                <text class='noney'>￥188</text>
+                <text style='text-decoration: line-through'>￥388</text>
+             </view>
+              <text>2人团</text>
+          </view>
+    </view>
+
+
+
+
+
+</view>
+

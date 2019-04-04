@@ -1,0 +1,33 @@
+<!--pages/ecurities/ecurities.wxml-->
+  <view class='select-iten'>
+  
+        <view class='money'>￥50</view>
+        <view class='conter'>
+            <view class='conter-title'>订单满200可以用</view>
+            <view class='conter-time'>2018.12.12 - 2018.12.30</view>
+            <view class='class-ok'>
+                  <text class='conter-class'>部分分类可用</text>
+            </view>
+        </view>
+        <view class='select-btn' bindtap='select_btn'>领取</view>
+
+        <image src='../../images/icon.png' class='iocn' mode='widthFix'></image>
+  </view>
+
+  
+    <view class='select-iten'>
+  
+        <view class='money'>￥50</view>
+        <view class='conter'>
+            <view class='conter-title'>订单满200可以用</view>
+            <view class='conter-time'>2018.12.12 - 2018.12.30</view>
+            <view class='class-ok'>
+                  <text class='conter-class'>部分分类可用</text>
+            </view>
+        </view>
+        <view class='select-btn' bindtap='select_btn'>领取</view>
+
+        <image src='../../images/icon.png' class='iocn' mode='widthFix'></image>
+  </view>
+
+  

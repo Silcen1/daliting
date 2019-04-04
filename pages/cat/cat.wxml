@@ -1,0 +1,30 @@
+<!--pages/class-list/class-list.wxml-->
+<view class='share' bindtap='go_search'>
+    <view class='share-nav'>
+        <image src='../../images/share.png' mode='widthFix' class='share-icon'></image>
+        <view class='open'>
+          <image src='../../images/open.png' mode='widthFix' class='share-icon-open'></image>
+        </view>
+        <input placeholder='搜索你的商品' class='placeholder' disabled></input>
+    </view>
+</view>
+
+<view class='show'>
+    <view class='class-list'>
+      <scroll-view scroll-y class='scroll-view'>
+        <view wx:for="{{list}}" wx:key="{{index}}" class="select-items {{type==index?'select-btn':''}}" data-index='{{index}}' bindtap='go_type' data-item='{{item}}'>{{item.name}}</view>
+        <!-- <view class='select-items {{type==3?"select-btn":""}}' data-id="3" bindtap="go_type">美发洗护</view>   -->
+      </scroll-view>
+    </view>
+    <view class='class-infos'>
+        <text>{{child.name}}</text>
+        <scroll-view scroll-y class='sub-scroll-view' wx:for="{{child.list}}" wx:key="{{index}}">
+          <view class='sub-scroll-view-box'>
+            <view class='sub-items' bindtap="go_detail" data-item='{{item}}'>
+              <image src='{{item.pic_url}}' mode='widthFix'> </image>
+              <text>{{item.name}}</text>
+            </view>
+          </view>
+        </scroll-view>
+    </view>
+</view>

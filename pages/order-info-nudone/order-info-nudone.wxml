@@ -1,0 +1,100 @@
+<!--pages/order-info/order-info.wxml-->
+<view class='tops'>
+    <image src='../../images/top-image.png' mode='widthFix' class = "images-top"></image>
+    <view class='tops-margin'>
+      
+      <view class='text-images'>
+        <image src='../../images/icon1.png' mode='widthFix'></image>
+        <text>订单未付款</text>
+      </view>
+ 
+      <text>你的订单还未支付<text wx:if="{{false}}">，订单将在23时59分后关闭！</text></text>
+    </view>  
+</view>  
+    
+<view class='address'>
+
+    <image src='../../images/address-iocn.png' mode='widthFix'></image>
+
+    <view class='messages'>
+          <view class = "select-user">
+            <text>{{list.name}}</text>
+            <text>{{list.mobile}}</text>
+          </view>
+
+          <view class='address-message'>
+            {{list.address}}
+          </view>
+    </view>
+
+
+
+</view>
+
+<view class='store'> 
+
+ <view class='store-tops'>
+    <image src='../../images/shop-car-logo.png' class='store-heade' mode='widthFix'></image>
+    <text>阿希专卖店</text>
+     <image src='../../images/shop-car-more.png' class='store-mores' mode='widthFix'></image>
+ </view>
+ 
+  <view class='item-lists'>
+    <image src='{{list.goods_list[0].goods_pic}}' mode='widthFix'></image>
+    
+    <view class='item-conter'>
+        <view class='conter'>
+             {{list.goods_list[0].name}}
+        </view>
+        <text>规格：{{list.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+    </view>
+
+    <view class='select-count'>
+      <text>￥{{list.pay_price}}</text>
+      <text>x {{list.num}}</text>
+    </view>
+
+  </view>
+
+</view>
+ 
+<view class='item-conters'>
+  <view class='select-items'>
+    <text>运费</text>
+    <text>￥{{list.express_price}}</text>
+  </view>
+
+  <view class='select-money'>
+
+    <text>合计</text>
+    <text class="moneys">￥{{list.total_price}}</text>
+   
+  </view>
+
+</view>
+
+<view class='tops-tips'>  
+    <view class='top-titls'>
+        订单信息
+    </view>
+    <view class='select-list'>
+        <text>订单编号</text>
+        <text>{{list.order_no}}</text>
+    </view>
+
+    <view class='select-list'>
+        <text>下单时间</text>
+        <text>{{list.addtime}}</text>
+    </view>
+</view>
+
+
+<view class='list-order'>
+    <view class ="order-btns">
+        <view bindtap='reject' data-order_id="{{list.order_id}}">取消订单</view>
+        <view>联系商家</view>
+        <view class='select-btns' bindtap='submit' data-order_id="{{list.order_id}}">去付款</view>
+    </view>
+</view>
+
+

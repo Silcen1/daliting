@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "大转盘",
+  "usingComponents": {
+    "MsgBox": "/components/MsgBox/MsgBox"
+  }
+}

@@ -1,0 +1,334 @@
+/* pages/order-list/order-list.wxss */
+page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fafafa;
+}
+.order-item{
+   width: 100%;
+  font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0px;
+	color: #333333;
+  display: flex;
+  justify-content: center;
+  height: 80rpx;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+.order-item>text{
+  text-align: center;
+  width: 160rpx;
+	height: 48rpx;
+  line-height: 48rpx;
+	border-radius: 24rpx;
+  margin-left: 4rpx;
+  margin-right: 4rpx;
+}
+.order-select{
+	border: solid 1px #ff3300;
+  color: #ff3300; 
+}
+.order-item-btn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80rpx;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  background-color: #fff;
+  
+}
+.order-item-btn>text{
+  	width: 120rpx;
+    height: 48rpx;
+    border-radius: 24rpx;
+    font-family: PingFang-SC-Medium;
+    font-size: 24rpx;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #000000;
+    padding-left: 17rpx;
+    padding-right: 17rpx;
+    padding-top: 6rpx;
+    padding-bottom: 6rpx;
+    text-align: center;
+    line-height: 48rpx;
+    margin-left: 12rpx;
+    margin-right: 12rpx;
+}
+.order-item-btn .select-btn{
+  font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ffffff;
+  background-color: #ff3300;
+}
+.nav-store .orders{
+  background-color: #ff3300;
+  color: #fff;
+  margin-left: 16rpx;
+  border-bottom: 1px solid #ff3300;
+}
+.order-items{
+  width: 690rpx;
+	min-height: 310rpx;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 16rpx 0px 
+		rgba(0, 0, 0, 0.05);
+	border-radius: 25rpx;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+}
+.images-logos{
+  width: 30rpx;
+}
+.iamges-mores{
+  width: 12rpx;
+}
+.store-image{
+  display: flex;
+  align-items: center;
+}
+.store-image>text{
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
+  margin-left: 18rpx;
+  margin-right: 30rpx;
+}
+.nav-top{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.status{
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 38rpx;
+	letter-spacing: 0px;
+	color: #ff3300;
+}
+
+.list-items image{
+  width: 160rpx;
+}
+.list-contens{
+  display: flex;
+  padding-right: 30rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+.contens-message{
+  flex: 1;
+  font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 30rpx;
+	letter-spacing: 0px;
+	color: #000000;
+  padding-left: 30rpx;
+
+}
+.contens-message>text{
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+  display: inline-block;
+  margin-top: 19rpx;
+}
+.counts{
+  display: flex;
+  flex-direction: column;
+  font-family: PingFang-SC-Medium;
+	font-size: 22rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
+  align-items: flex-end;
+}
+.number-counts{
+  font-family: DINPro-Regular;
+	font-size: 22rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+.number-countss{
+  padding-right: 30rpx;
+}
+.counts-text{
+  font-family: PingFang-SC-Regular;
+	font-size: 22rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30rpx;
+}
+.counts-texts{
+  font-family: DINPro-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	letter-spacing: 0px;
+	color: #333333;
+}
+.number-counts{
+  /* margin-right: 30rpx; */
+}
+.nav-store{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30rpx;
+  margin-top: 30rpx;
+}
+.nav-store>view{
+  width: 160rpx;
+	height: 48rpx;
+  line-height: 48rpx;
+	border-radius: 24rpx;
+	border: solid 1px #cccccc;
+  font-family: PingFang-SC-Regular;
+	font-size: 22rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
+  text-align: center;
+}
+.stores{
+  margin-left: 20rpx;
+}
+.number-store{
+  width: 80rpx;
+	height: 36rpx;
+	background-color: #fff2f2;
+	border-radius: 18rpx;
+  font-family: PingFang-SC-Regular;
+	font-size: 20rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ff3300;
+  text-align: center;
+  line-height: 36rpx;
+}
+.counts-texts-store{
+  font-family: DINPro-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	letter-spacing: 0px;
+	color: #ff3300;
+  margin-left: 15rpx;
+}
+.nav-store .pays{
+  	background-color: #ff3300;
+    color: #fff;
+    border: 1px solid #ff3300;
+}
+.up{
+  display: none
+}
+.onshare{
+  width: 160rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  border: solid 1px #cccccc;
+  background-color: white;
+  border-radius: 25px 25px 25px;
+  font-family: PingFang-Regular;
+  font-size: 22rpx;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #333333;
+  /* margin:1rpx; */
+  margin-top:2rpx;
+  margin-left:328rpx;
+}
+.onshare::after{
+  border:none;
+}
+button::after{
+border:none;
+}
+input{
+outline:none;
+border:none;
+list-style: none;
+}
+.open{
+  position: absolute;
+  top: 288rpx;
+  left: 152rpx;
+  width: 160rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  border: solid 1px #cccccc;
+  background-color: white;
+  border-radius: 25px 25px 25px 25px;
+  font-family: PingFang-Regular;
+  font-size: 22rpx;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #333333;
+}
+.open_type{
+  position: absolute;
+  top: 290rpx;
+  left: 312rpx;
+  width: 160rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  border: solid 1px #cccccc;
+  background-color: white;
+  border-radius: 25px 25px 25px 25px;
+  font-family: PingFang-Regular;
+  font-size: 22rpx;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #333333;
+}
+.open_type_contact{
+  position: absolute;
+  top: 160rpx;
+  right: 15rpx;
+  width: 160rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  border: solid 1px #cccccc;
+  background-color: white;
+  border-radius: 25px 25px 25px 25px;
+  font-family: PingFang-Regular;
+  font-size: 22rpx;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #333333;
+}

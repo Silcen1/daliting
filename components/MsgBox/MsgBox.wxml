@@ -1,0 +1,31 @@
+<!--components/MsgBox/MsgBox.wxml-->
+<view class="forbid" hidden='{{!isShow}}'>
+   <view class="thanks" wx:if="{{award.length==0}}">
+      <view class="close">
+        <image src="../../images/icon4.png" bindtap='close'></image>
+      </view>
+      <view class="item">
+        <image src="../../images/get-set.png"></image>
+      </view>
+      <view class="know" bindtap='close'>知道了</view>
+   </view>
+   <view class="wow" wx:else>
+      <view class="close">
+        <image src="../../images/icon4.png" bindtap='close'></image>
+      </view>
+      <view class="award-item">
+         <image src='../../images/get-btn.png'></image>
+      </view>
+      <view class="award-msg">
+          <view class="award-img">
+             <image src="{{award}}"></image>
+          </view>
+          <view class="award-name">{{name}}</view>
+      </view>
+      <view class="get">
+         <view class="get-msg">恭喜您获得</view>
+         <view class="get-msg">“{{name}}”</view>
+         <image src="../../images/get.png" bindtap='draw' data-name="{{name}}" data-url="{{award}}"></image>
+      </view>
+   </view>
+</view>

@@ -1,0 +1,80 @@
+<!--pages/create-order/create-order.wxml-->
+<view class='address' bindtap="go_address">
+
+      <image src='../../images/address-icon.png' style='width:30rpx;' mode='widthFix'></image>
+
+      <view class='address-info' wx:if="{{address.name==undefind}}">
+          <view>请选择收货地址</view>
+      </view>
+ 
+      <view class='address-info' wx:else>
+          <text><text class="user_name">{{address.name}}</text>{{address.mobile}}</text>
+          <view>{{address.province+address.city+address.district+address.detail}}</view>
+      </view> 
+
+      <image src='../../images/more-user.png' style='width:12rpx;' mode='widthFix'></image>
+ 
+</view>
+
+
+
+
+
+
+
+<view class='address-infos'> 
+
+    <view class='store-info'> 
+        <image src='{{pic}}' mode='widthFix'></image>
+        <view class='info-messages'>
+            <view class='info'>{{list.name}}</view>
+            <text>规格：{{type}}-{{size}}</text>
+            <view class='store-other'>
+                <text class='other-noney'>￥{{sum}}</text>
+                <text class='counts'>x{{num}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='other-infos'>
+      <text>数量</text>
+      <view class='other-select'>
+          <view bindtap='number_counts_nuadd'>
+            <image src='../../images/nuadd.png' mode='widthFix' class='in-image'></image>
+          </view>
+          <view class='number-counts'>{{num}}</view>
+          <view bindtap='number_counts_add'>
+            <image src='../../images/add.png' mode='widthFix' class='in-image'></image>
+          </view>
+      </view> 
+    </view> 
+
+
+</view>
+
+<view class='other'>
+
+    <view class='other-list'>
+      <text>运费</text>
+      <text>￥{{express_price}}</text>
+    </view>
+
+    <view class='other-list' bindtap='mores'>
+      <text>优惠券</text>
+  
+      <view class='mores-images' >{{order_list.data.mch_list[0].coupon_list.length}}张可用
+        <image src='../../images/more-user.png' mode='widthFix'></image>
+      </view>
+    </view>
+</view>
+
+
+<view class='nav-btns'>
+    <view class='nav-show'>
+          <text>实付金额：</text>
+          <text class='money-show'>￥{{sum*num+express_price}}</text>
+    </view>
+    <view class='nav-pay-btn' bindtap='submit_order'>
+      提交订单
+    </view>
+</view>

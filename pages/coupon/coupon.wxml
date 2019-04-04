@@ -1,0 +1,31 @@
+<!--pages/coupon/coupon.wxml-->
+
+<view class="coupon-none"  wx:if="{{list.length==0}}">
+    <image src='../../images/selec-bg.png' mode='widthFix' class='selec-imgs'></image>
+
+    <text class='tips'>你怎么一张优惠券都不领！</text>
+    <view class='get-btn' bindtap='get_btn'>
+      领优惠券
+    </view>
+</view>
+
+<view class='item-conter' wx:for="{{list}}" wx:key="{{index}}">
+  <image src='../../images/tos.png' mode='widthFix'></image>
+  <view class='itme-list'>
+      <view class='contes'>
+ 
+          <view class='money'>
+            <text class='money-text'>￥{{item.sub_price}} 红包</text>
+            <text>订单满{{item.min_price}}可以用</text>
+          </view>
+  
+          <view class='store-name'>
+            发行店铺：????
+          </view>
+
+          <view class='store-name'>
+            有效期 <text>{{item.begin_time}} - {{item.end_time}}</text> 
+          </view>
+      </view>
+  </view>
+</view>

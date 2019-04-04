@@ -1,0 +1,143 @@
+<!--pages/order-info/order-info.wxml-->
+<view class='tops'>
+    <image src='../../images/top-image.png' mode='widthFix' class = "images-top"></image>
+    <view class='tops-margin'>
+      
+      <view class='text-images'>
+        <image src='../../images/icon6.png' mode='widthFix'></image>
+        <text>拼团中</text>
+      </view>
+ 
+      <text>还剩23时59关闭</text>
+    </view>
+</view> 
+  
+<view class='address'>
+
+    <image src='../../images/address-iocn.png' mode='widthFix'></image>
+
+    <view class='messages'>
+          <view class = "select-user">
+            <text>阿希</text>
+            <text>13500001234</text>
+          </view>
+
+          <view class='address-message'>
+            广东省广州市白云区白云公园别墅1335号房前台一楼
+          </view>
+    </view>
+
+
+
+
+</view>
+
+<view class='store'> 
+
+ <view class='store-tops'>
+    <image src='../../images/shop-car-logo.png' class='store-heade' mode='widthFix'></image>
+    <text>阿希专卖店</text>
+     <image src='../../images/shop-car-more.png' class='store-mores' mode='widthFix'></image>
+ </view>
+
+  <view class='item-lists'> 
+    <image src='{{assemble.data.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+      
+    <view class='item-conter'>
+        <view class='conter'>
+              {{assemble.data.list[0].goods_list[0].goods_name}}
+        </view>
+        <text>{{assemble.data.list[0].goods_list[0].attr_list[0].attr_group_name}}：{{assemble.data.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+    </view>
+
+    <view class='select-count'>
+      <text>￥{{assemble.data.list[0].pay_price}}</text>
+      <text>x {{assemble.data.list[0].goods_list[0].num}}</text>
+    </view>
+
+  </view>
+
+</view>
+
+<view class='item-conters'>
+  <view class='select-items'>
+    <text>运费</text>
+    <text>￥15</text>
+  </view>
+
+  <view class='select-money'>
+
+    <text>合计</text>
+    <text class="moneys">￥15</text>
+  
+  </view>
+
+</view>
+
+<view class='tops-tips'>  
+    <view class='top-titls'>
+        订单信息
+    </view>
+    <view class='select-list'>
+        <text>订单编号</text>
+        <text>12132432123768218</text>
+    </view>
+    <view class='select-list'>
+        <text>下单时间</text>
+        <text>12132432123768218</text>
+    </view>
+</view>
+
+<view>
+      <view class='title-loading'>
+          <image src='../../images/icon7.png' mode='widthFix'></image>
+      </view>
+
+      <view class='title-content'>还差3人，团满即可拼团成功</view>
+      <!-- <view class='times'>
+              <text>距结束还剩</text>
+              <view class='select-items'>
+                  <view>23</view>:
+                  <view>23</view>:
+                  <view>23</view>
+              </view>
+      </view> -->
+
+<!-- 倒计时 -->
+<view class="countDownTimeView pull-left countDownAllView text-left">
+ 
+     <text class='over'>距离结束还剩：</text>
+ 
+     <text class="voteText countDownTimeText">{{countDownHour}}</text> :
+ 
+     <text class="voteText countDownTimeText">{{countDownMinute}}</text> :
+ 
+     <text class="voteText countDownTimeText">{{countDownSecond}}</text>
+ 
+</view>
+
+
+
+      <view class='items-message'>
+          <view class='message-box'>
+            <image src='../../images/header.png' mode='widthFix'></image>
+            <image src='../../images/vip.png' mode='widthFix' class='vip'></image>
+          </view>
+          <view class='message-item'>
+            <image src='../../images/header.png' mode='widthFix'></image>
+            <image src='../../images/header.png' mode='widthFix'></image>
+            <image src='../../images/header.png' mode='widthFix'></image>
+            <image src='../../images/header.png' mode='widthFix'></image>
+          </view>
+      </view>
+
+      <view class='nav-btns'>
+          <view>放弃拼团</view>
+          <view>联系商家</view>
+          <view>邀请好友</view>
+      </view>
+
+
+
+
+</view>

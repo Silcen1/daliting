@@ -1,0 +1,102 @@
+/* pages/ecurities/ecurities.wxss */
+page{
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+.select-btn{
+  width: 120rpx;
+	height: 64rpx;
+	background-color: #ff3300;
+	border-radius: 32rpx;
+  font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+  line-height: 64rpx;
+	color: #ffffff;
+  text-align: center;
+  
+}
+.select-iten{
+  width: 630rpx;
+	height: 176rpx;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 16rpx 0px 
+		rgba(0, 0, 0, 0.05);
+	border-radius: 25rpx;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  position: relative;
+}
+
+.iocn{
+  position: absolute;
+  left: 0;
+  width: 68rpx;
+  top: 0;
+}
+
+.money{
+  font-family: DINPro-Medium;
+	font-size: 60rpx;
+	font-weight: normal;
+	letter-spacing: 0px;
+	color: #ff3300;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.conter{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.conter-title{
+  	font-family: PingFang-SC-Medium;
+	font-size: 20rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+  text-align: center;
+}
+.conter-time{
+  font-family: PingFang-SC-Medium;
+	font-size: 20rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+  text-align: center;
+  margin-top: 9rpx;
+}
+.conter-class{
+  	font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ff8b00;
+  border-radius: 12rpx;
+	border: solid 1px #ff8b00;
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+  margin-top: 16rpx;
+}
+.class-ok{
+  display: flex;
+  justify-content: center;
+
+}

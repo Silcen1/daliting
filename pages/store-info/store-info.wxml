@@ -1,0 +1,246 @@
+<!--pages/store-info/store-info.wxml-->
+<view class='tops'>
+  <image src='../../images/tops.png' mode='widthFix'></image>
+</view>
+
+
+<view class='store-infos'>
+    <view class='hot-nav'>
+        <text class='old-new'>￥688</text>
+         <text class='old-money'>￥1688</text>
+         <image src='../../images/hot.png' mode='widthFix' class='hot'></image>
+    </view>
+    <view class='text-message'>创意实用闺蜜特别的浪漫小圣诞节暖手宝充电宝</view>
+    <view class='message-box'>充电宝 暖手宝 两用 浪漫萌宠送女生送温暖</view>
+    <view class='box-select'>
+        <text>已售152件</text>
+        <text>广东广州</text>
+    </view> 
+</view>
+
+<view class='count'>
+
+  <view class='count-nav'>
+
+        <view class='select-text'>
+            <text>已选</text>
+            <text class='select-default'>默认</text>
+        </view>
+
+        <image src='../../images/more-user.png' mode='widthFix' ></image>
+  </view>
+
+   <view class='count-nav'>
+
+        <view class='select-text'>
+            <text>数量</text>
+            <view class='select-counts'> 
+              <image src='../../images/nuadd.png' mode='widthFix'></image>
+              <view class='select-number'>
+              1
+              </view>
+              <image src='../../images/add.png'  mode='widthFix'></image>
+            </view>
+        </view>
+
+       <view>库存：300件</view>
+  </view>
+
+</view>
+
+<view class='select-click'>
+
+  <view class=" {{showinfo == 'true'?'selectclick select-item':' select-item' }}" catchtap='selectBtn' data-select='true'>
+      商品介绍
+  </view>
+
+   <view class=" {{showinfo == 'false'?'selectclick select-item':' select-item' }}"  catchtap='selectBtn' data-select='false'>
+      用户评价
+  </view>
+
+
+</view>
+
+<!-- 商品介绍 -->
+<view hidden="{{showinfo == 'false'}}">
+1
+</view>
+
+
+<!-- 用户评价 -->
+
+<view hidden="{{showinfo == 'true'}}" class='list'>
+
+        <view class='list-item'>
+              <view class='select-tops'>
+                  <image src='../../images/header.png' mode='widthFix'></image>
+                  <text>阿希阿希</text>
+              </view>
+
+
+              <view class='message'>
+              宝贝很不错，看着挺可爱的，拿在手里也小巧，既能暖手又能当充电宝用，这点不错，包装方面，店家也比较用心，准备送给女朋友，我想应该会满意的，另外客服的服务态度也很噢，喜欢的朋友，可以考虑一下。
+              </view>
+
+              <view class='times'>
+                    2018-12-17  16:49
+              </view>
+
+        </view>
+
+        <view class='list-item'>
+                    <view class='select-tops'>
+                        <image src='../../images/header.png' mode='widthFix'></image>
+                        <text>阿希阿希</text>
+                    </view>
+
+
+                    <view class='message'>
+                    宝贝很不错，看着挺可爱的，拿在手里也小巧，既能暖手又能当充电宝用，这点不错，包装方面，店家也比较用心，准备送给女朋友，我想应该会满意的，另外客服的服务态度也很噢，喜欢的朋友，可以考虑一下。
+                    </view>
+
+                    <view class='times'>
+                          2018-12-17  16:49
+                    </view>
+
+          </view>
+</view>
+
+<view class='store-nav'>
+    <view class='logo'>
+      <image src='../../images/store-logo.png' mode='widthFix'></image>
+      <text>阿希专卖店</text>
+    </view>
+
+    <view class='more-images'>
+      <text>进入店铺</text>
+      <image src='../../images/more-user.png' mode='widthFix'></image>
+    </view>
+</view>
+
+<view class='nav-bar'>
+      <view class='select-home'>
+          <image src='../../images/home.png' mode='widthFix'></image>
+          <text>首页</text>
+      </view>
+
+      <view class='select-home'>
+          <image src='../../images/home.png' mode='widthFix'></image>
+          <text>客服</text>
+      </view>
+
+
+
+      <view class='select-btns'>
+          <view class='add-btns'>
+              加入购物车
+          </view>    
+          <view class='pay-btns'>
+              立即购买
+          </view>
+      </view>
+
+
+</view>
+
+
+<view class='alert-windows'>
+
+    <view class='alert'>
+
+          <view class='alert-nav'>
+                <view class='nav-windows'>
+                    <image src='../../images/store-name.png' mode='widthFix'></image>
+
+
+                    <view class='nav-alert-images'>
+                        <text class='alert-noney'>￥{{sum*num}}</text>
+                        <text class='alert-crul'>已选  -  白色  -  大</text>
+                    </view>
+                </view> 
+                <image src='../../images/close-icon.png' mode='widthFix' bindtap='go_detail'></image>
+          </view>
+
+
+
+          <view class='select-items'>
+
+              <text>颜色</text>
+
+              <view class='items'>
+                <text class='{{select==0?"select-btnst":""}}' bindtap='select_btnst' data-id='0'>白色</text>
+                <text class='{{select==1?"select-btnst":""}}' bindtap='select_btnst' data-id='1'>白色</text>
+                <text class='{{select==2?"select-btnst":""}}' bindtap='select_btnst' data-id='2'>白色</text>
+          
+                <text class='{{select==3?"select-btnst":""}}' bindtap='select_btnst' data-id='3'>白色</text>
+              </view>
+ 
+          </view>
+
+
+          <view class='select-items'>
+
+              <text>规格</text>
+
+              <view class='items'>
+                <text class='{{selects==0?"select-btnst":""}}' bindtap='select_btnsts' data-id='0'>大</text>
+                <text class='{{selects==1?"select-btnst":""}}' bindtap='select_btnsts' data-id='1'>中</text>
+
+                <text class='{{selects==2?"select-btnst":""}}' bindtap='select_btnsts' data-id='2'>白色</text>
+                <text class='{{selects==3?"select-btnst":""}}' bindtap='select_btnsts' data-id='3'>白色</text>
+           
+                <text class='{{selects==4?"select-btnst":""}}' bindtap='select_btnsts' data-id='4'>小</text>
+                
+                <text class='{{selects==5?"select-btnst":""}}' bindtap='select_btnsts' data-id='5'>白色</text>
+                <text class='{{selects==6?"select-btnst":""}}' bindtap='select_btnsts' data-id='6'>白色</text>
+           
+                <text class='{{selects==7?"select-btnst":""}}' bindtap='select_btnsts' data-id='7'>小</text>
+                
+                <text class='{{selects==8?"select-btnst":""}}' bindtap='select_btnsts' data-id='8'>白色</text>
+                <text class='{{selects==9?"select-btnst":""}}' bindtap='select_btnsts' data-id='9'>白色</text>
+           
+                <text class='{{selects==10?"select-btnst":""}}' bindtap='select_btnsts' data-id='10'>小</text>
+
+                
+                <text class='{{selects==11?"select-btnst":""}}' bindtap='select_btnsts' data-id='11'>白色</text>
+                <text class='{{selects==12?"select-btnst":""}}' bindtap='select_btnsts' data-id='12'>白色</text>
+           
+                <text class='{{selects==13?"select-btnst":""}}' bindtap='select_btnsts' data-id='13'>小</text>
+                <text class='{{selects==14?"select-btnst":""}}' bindtap='select_btnsts' data-id='14'>白色</text>
+                <text class='{{selects==15?"select-btnst":""}}' bindtap='select_btnsts' data-id='15'>白色</text>
+           
+                <text class='{{selects==16?"select-btnst":""}}' bindtap='select_btnsts' data-id='16'>小</text>
+                
+                <text class='{{selects==17?"select-btnst":""}}' bindtap='select_btnsts' data-id='17'>白色</text>
+                <text class='{{selects==18?"select-btnst":""}}' bindtap='select_btnsts' data-id='18'>白色</text>
+           
+                <text class='{{selects==19?"select-btnst":""}}' bindtap='select_btnsts' data-id='19'>小</text>
+                
+
+              </view>
+ 
+          </view>
+
+
+          <view class='number-border'>
+            <view>数量</view>
+            <view class='select-add'>
+                  <view  bindtap='count_number_nuadd' class=''>
+                    <image src='../../images/nuadd.png' mode='widthFix' class='in-image'> </image>
+                  </view>
+                  <view class='count-number'>{{num}}</view>
+                  <view bindtap='count_number_add' class=''>
+                    <image src='../../images/add.png' mode='widthFix' class='in-image'> </image>
+                  </view>   
+            </view>
+          </view>
+
+          <view class='isok' bindtap='create_order'>
+                <view>
+                  确定
+                </view>
+          </view>
+          
+
+    </view>
+</view>

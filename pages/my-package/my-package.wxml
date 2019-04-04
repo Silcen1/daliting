@@ -1,0 +1,20 @@
+<!--pages/my-package/my-package.wxml-->
+<view class='money'>
+      <image src='{{detail.data.wallets.status_1.icon}}' mode='widthFix'></image>
+</view>
+<view class = "tips">{{detail.data.wallets.status_1.text}}</view>
+<view class='counts'>
+
+  <text>￥{{detail.data.user_info.money}}</text>
+</view>
+ 
+<view class='select-btns'> 
+
+      <view class='btn-select' bindtap='recharge'>
+      充值
+      </view>
+      <view class='btn-selects' bindtap='get_money'>
+      提现
+      </view>
+
+</view>

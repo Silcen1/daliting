@@ -1,0 +1,20 @@
+<!--pages/elastic-frame/elastic-frame.wxml-->
+ <view class="fenxiang-box">
+    <view bindtap="show" style='text-align:center' style='margin:500rpx 170rpx;text-align:center;'>商家中心</view>
+  </view>
+ 
+ 
+<!-- 弹出层内容，其中的“我知道”中绑定让弹出层消失的函数：bindtap="hide" -->
+<view class="modal-box" hidden="{{flag}}" bindtap="hide">
+ 
+    <view class="modal-body">
+             <image src="../../images/goto.png"></image>
+              <view class='contant'> 
+              <text class='please'>请到</text>
+              <text class='road'>www.daliting.com</text>
+              <text class='center'>查看商家中心</text>
+        </view>
+        <button class='knowBtn' bindtap="hide">我知道了</button>
+    
+    </view>
+  </view>

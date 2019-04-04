@@ -1,0 +1,5 @@
+<!--pages/pay-done/pay-done.wxml-->
+<image src='../../images/true.png' mode='widthFix' class = "status"></image>
+<view class='statu-tips'>支付成功！</view>
+<view class='pack'>请注意查收包裹</view>
+<view class='done-isok' bindtap="complete">完成</view>

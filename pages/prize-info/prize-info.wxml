@@ -1,0 +1,34 @@
+<!--pages/prize-info/prize-info.wxml-->
+<view class='top'>
+  <text>奖品详情</text>
+  <view class='top-list'>
+    <image src='{{prize.url}}' mode='widthFix'></image>
+    <view class='list-messages'>
+      <view>{{prize.name}}</view>
+      <text class='list-money'> 数量1{{prize.unit}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='windows'>
+    <view class='list-userinput'>
+       <text> 姓名</text>
+        <input class='user-input' placeholder='请输入姓名'></input>
+    </view>
+
+     <view class='list-userinput'>
+       <text> 地址</text>
+        <input class='user-input' placeholder='请输入地址'></input>
+    </view>
+
+     <view class='list-userinput'>
+       <text> 手机号</text>
+        <input class='user-input' placeholder='请输入手机号'></input>
+    </view>
+
+
+</view>
+
+<view class='get-btns'>
+  领取奖品
+</view>

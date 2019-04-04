@@ -1,0 +1,29 @@
+/* pages/prize-rule/prize-rule.wxss */
+.rule_title{
+  width:100%;
+  text-align: center;
+	font-family: PingFang-SC-Regular;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 3rpx;
+	color: #ff3300;
+  padding:60rpx 0;
+}
+.rule{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:0 31rpx;
+}
+.rule_details{
+  width: 100%;
+	font-family: PingFang-SC-Regular;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 38rpx;
+	letter-spacing: 1rpx;
+	color: #333333;
+  margin-bottom: 40rpx;
+}

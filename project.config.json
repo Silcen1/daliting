@@ -1,0 +1,470 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wx7fa38c965228c633",
+	"projectname": "%E5%A4%A7%E7%A4%BC%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%88%E5%B9%B6%E7%89%88-4.3",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 70,
+			"list": [
+				{
+					"id": 0,
+					"name": "注册-输入密码",
+					"pathName": "pages/register-password/register-password",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/shop-car/shop-car",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/admin/admin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人资料",
+					"pathName": "pages/user-self/user-self",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的钱包",
+					"pathName": "pages/my-package/my-package",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "充值",
+					"pathName": "pages/recharge/recharge",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/get-money/get-money",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请售后",
+					"pathName": "pages/server/server",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收货地址",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "等待审核",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "评价成功",
+					"pathName": "pages/done/done",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠卷",
+					"pathName": "pages/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "服务中心",
+					"pathName": "pages/user-sever/user-sever",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "订单列表",
+					"pathName": "pages/order-list/order-list",
+					"query": ""
+				},
+				{
+					"id": 15,
+					"name": "订单详情-订单未付款",
+					"pathName": "pages/order-info-nudone/order-info-nudone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-等待商家发货",
+					"pathName": "pages/order-info-send/order-info-send",
+					"query": ""
+				},
+				{
+					"id": 17,
+					"name": "订单详情-待收货",
+					"pathName": "pages/order-info-loading/order-info-loading",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-交易完成",
+					"pathName": "pages/order-info-done/order-info-done",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-交易完成",
+					"pathName": "pages/order-info-close/order-info-close",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-拼团中",
+					"pathName": "pages/booking-loading/booking-loading",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-拼团失败",
+					"pathName": "pages/booking-close/booking-close",
+					"query": ""
+				},
+				{
+					"id": 22,
+					"name": "订单详情-拼团成功",
+					"pathName": "pages/booking-ok/booking-ok",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-砍价中",
+					"pathName": "pages/bargain-loading/bargain-loading",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-砍价成功",
+					"pathName": "pages/bargain-ok/bargain-ok",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-砍价失败",
+					"pathName": "pages/bargain-err/bargain-err",
+					"query": ""
+				},
+				{
+					"id": 26,
+					"name": "订单详情-售后处理-商家处理中",
+					"pathName": "pages/after-loading/after-loading",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-售后处理-商家同意处理中",
+					"pathName": "pages/after-agree/after-agree",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-售后处理-商家发货",
+					"pathName": "pages/after-send/after-send",
+					"query": ""
+				},
+				{
+					"id": 29,
+					"name": "订单详情-售后处理-退款成功",
+					"pathName": "pages/refund-start/refund-start",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情-售后处理-退款关闭",
+					"pathName": "pages/refund-end/refund-end",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发表评价",
+					"pathName": "pages/evaluate/evaluate",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "物流信息",
+					"pathName": "pages/logistics/logistics",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单-拼团列表",
+					"pathName": "pages/spell-list/spell-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单-售后列表",
+					"pathName": "pages/after-list/after-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单-砍价列表",
+					"pathName": "pages/bargain-list/bargain-list",
+					"query": ""
+				},
+				{
+					"id": 36,
+					"name": "分类列表",
+					"pathName": "pages/class-list/class-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索结果",
+					"pathName": "pages/search-return/search-return",
+					"query": ""
+				},
+				{
+					"id": 39,
+					"name": "分类-商品列表",
+					"pathName": "pages/store-list/store-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/store-info/store-info",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "创建订单",
+					"pathName": "pages/create-order/create-order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "支付完成",
+					"pathName": "pages/pay-done/pay-done",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加地址",
+					"pathName": "pages/address-add/address-add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑地址",
+					"pathName": "pages/address-edit/address-edit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 46,
+					"name": "超值拼团-各种二级跳转",
+					"pathName": "pages/puzzle/puzzle",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "超值拼团-商品详情",
+					"pathName": "pages/puzzle-list/puzzle-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "领劵中心",
+					"pathName": "pages/ecurities/ecurities",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "领劵中心2",
+					"pathName": "pages/securities/securities",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "砍价商品详情",
+					"pathName": "pages/bargain-info/bargain-info",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "砍价主页",
+					"pathName": "pages/bargain-admin/bargain-admin",
+					"query": ""
+				},
+				{
+					"id": 52,
+					"name": "砍价分享主页",
+					"pathName": "pages/share-admin/share-admin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "店铺主页",
+					"pathName": "pages/store-admin/store-admin",
+					"query": ""
+				},
+				{
+					"id": 54,
+					"name": "我的奖品",
+					"pathName": "pages/prize-list/prize-list",
+					"query": ""
+				},
+				{
+					"id": 55,
+					"name": "我的奖品详情",
+					"pathName": "pages/prize-info/prize-info",
+					"query": ""
+				},
+				{
+					"id": 56,
+					"name": "抽奖页面",
+					"pathName": "pages/prize-admin/prize-admin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "aaa",
+					"pathName": "pages/puzzle-list/puzzle-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "aaaa",
+					"pathName": "pages/bargain-admin/bargain-admin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "aa",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "aaa",
+					"pathName": "pages/class-list/class-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "11",
+					"pathName": "pages/store-info/store-info",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "11",
+					"pathName": "pages/create-order/create-order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "11",
+					"pathName": "pages/store-info/store-info",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "11",
+					"pathName": "pages/puzzle-list/puzzle-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "11",
+					"pathName": "pages/shop-car/shop-car",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/order-list/order-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "1111",
+					"pathName": "pages/bargain-list/bargain-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "2222",
+					"pathName": "pages/address-edit/address-edit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "22222",
+					"pathName": "pages/bargain-list/bargain-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "99",
+					"pathName": "pages/ecurities/ecurities"
+				}
+			]
+		}
+	}
+}

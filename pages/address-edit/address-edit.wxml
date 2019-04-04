@@ -1,0 +1,29 @@
+<!--pages/address-add/address-add.wxml-->
+<view class='add'>
+    <view class='list-inputs'>
+        <text>收货人</text>
+        <input placeholder='填写名字' class='placeholder' bindinput='inp_name' value='{{name}}'></input>
+    </view>
+
+    <view class='list-inputs'>
+        <text>联系方式</text>
+        <input placeholder='未填写' class='placeholder' bindinput='inp_phone' value='{{phone}}'></input>
+        
+    </view>
+
+    <picker mode="multiSelector" bindchange="bindRegionChange" bindcolumnchange="bindMultiPickerColumnChange" value='{{allindex}}' range="{{all}}" range-key='name'>
+      <view class="picker">
+        <view class='list-inputs'>
+          <text>所在地区</text>
+          <view class='placeholder-picker'>{{city}}</view>
+          <image src='../../images/more-user.png' mode='widthFix'></image>
+        </view>
+      </view>
+    </picker>
+    <view class='list-inputs pickers'>
+        <text>详细地址</text>
+        <input placeholder='请输入详细地址' class='placeholder placeholder-input' bindinput='inp_address' value='{{address}}'></input>
+    </view>
+</view>
+
+<view class="submit" bindtap='submit'>保存</view>

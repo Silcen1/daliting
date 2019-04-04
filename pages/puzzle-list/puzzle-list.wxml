@@ -1,0 +1,217 @@
+<!--pages/store-info/store-info.wxml-->
+  <view class='tops'>
+      <swiper indicator-dots="true" autoplay="false" interval="500" duration="800">  
+          <swiper-item wx:for="{{list.pic_list}}" wx:key="{{index}}"> 
+                  <image src="{{item.pic_url||item}}" mode='widthFix'/> 
+          </swiper-item>  
+      </swiper> 
+  </view>
+
+
+<view class='store-infos'>
+    <view class='hot-nav'>
+        <text class='old-new'><text class="min">￥</text>{{list.price}}</text>
+         <text class='old-money'>￥{{list.original_price}}</text>
+         <image src='../../images/hot.png' mode='widthFix' class='hot'></image>
+    </view>
+    <view class='text-message'>{{list.name}}</view>
+    <!-- <view class='message-box'>{{list.mch.main_content}}</view> -->
+    <view class='box-select'>
+        <text>已售{{list.sales}}{{list.unit}}</text>
+        <text>{{list.mch.address}}</text>
+    </view> 
+</view>
+
+<view class='count'>
+
+  <view class='count-nav' bindtap='store_info'>
+
+        <view class='select-text'>
+            <text>已选</text>
+            <text class='select-default'>{{color}}{{g_size}}</text>
+        </view>
+
+        <image src='../../images/more-user.png' mode='widthFix'></image>
+  </view>
+
+   <view class='count-nav'>
+
+        <view class='select-text'>
+            <text>数量</text>
+            <view class='select-default'>{{list.num}}件</view>
+        </view>
+
+          <view class='select-counts'>
+            <view bindtap='select_number_nuadd'>
+              <image src='../../images/nuadd.png' mode='widthFix' class='in-image'></image>
+            </view> 
+            <view class='select-number'>{{num}}</view>
+            <view bindtap='select_number_add'>
+              <image src='../../images/add.png'  mode='widthFix' class='in-image'></image>
+            </view>
+          </view>
+  </view>
+
+</view>
+
+<view class='puzzle-nav' wx:if="{{detail==0}}">
+
+      <view class='nav-puzz'>
+          <image src='../../images/header.png'  mode='widthFix'></image>
+          <view>(5人拼团，1人 <text style="color:red">免费</text> )</view>
+      </view>
+
+       <view class='add-btns-add'>
+          <view>还差 <text style="color:red">3人</text></view>
+          <view class='select-add-btns' bindtap="start_group">
+              去参团
+          </view>
+      </view>
+
+
+</view>
+
+<view class='select-click'>
+
+  <view class=" {{showinfo == 'true'?'selectclick select-item':' select-item' }}" catchtap='selectBtn' data-select='true'>
+      商品介绍
+  </view>
+
+   <view class=" {{showinfo == 'false'?'selectclick select-item':' select-item' }}"  catchtap='selectBtn' data-select='false'>
+      用户评价
+  </view>
+
+
+</view>
+
+
+
+<!-- 商品介绍 -->
+<view hidden="{{showinfo == 'false'}}" class="detail">
+<rich-text nodes="{{img||list.detail}}"></rich-text>
+</view>
+
+
+<!-- 用户评价 -->
+
+<view hidden="{{showinfo == 'true'}}" class='list'>
+
+        <view wx:if="{{say.length==0}}" class="none-comment">暂无评论</view>
+
+        <view class='list-item' wx:for="{{say}}" wx:key="{{index}}">
+              <view class='select-tops'>
+                  <image src='{{item.avatar_url}}' mode='widthFix'></image>
+                  <text>{{item.nickname}}</text>
+              </view>
+
+
+              <view class='message'>
+              {{item.content}}
+              </view>
+
+              <view class="comment-img">
+                <image wx:for="{{item.pic_list}}" wx:key="{{index}}" wx:for-item="img" src="{{img}}" mode='widthFix'></image>
+              </view>
+
+              <view class='times'>
+               {{item.addtime}}
+              </view>
+
+        </view>
+</view>
+<!-- 此处跳转进入门店，需要传一个门店id，门店id从进入详情页开始就该获取，暂时没有，比如data-shop_id="{{list.shop_id}}" -->
+<view class='store-nav' bindtap="go_store">
+    <view class='logo'>
+      <image src='{{list.mch.logo}}' mode='widthFix'></image>
+      <text>{{list.mch.name}}</text>
+    </view>
+
+    <view class='more-images'>
+      <text>进入店铺</text>
+      <image src='../../images/more-user.png' mode='widthFix'></image>
+    </view>
+</view>
+
+<view class='nav-bar'>
+      <view class='select-home' bindtap='sy_y'>
+          <image src='../../images/home.png' mode='widthFix'></image>
+          <text>首页</text>
+      </view>
+
+      <view class='kefu'>
+          <label for='img'>
+            <image src='../../images/home.png' mode='widthFix'></image>
+            <button bindtap='chat' id="img" open-type='contact'>客服</button>
+          </label>
+      </view> 
+
+
+
+      <view class='select-btns' wx:if="{{detail==0}}">
+          <view class='add-btns' bindtap='store_info'>
+              单独购买
+          </view>    
+          <view class='pay-btns' bindtap="start_group">
+              立即开团
+          </view>
+      </view>
+
+      <view class='select-btns' wx:if="{{detail==1}}" bindtap="start_bargain" >
+          <view class='add-btns add-btns-1'>
+              发起砍价
+          </view>
+      </view>
+       <view class='select-btns' wx:if="{{detail==2}}" bindtap="store_info" >
+          <view class='add-btns add-btns-1'>
+              立即秒杀
+          </view>
+      </view>
+
+      <view class='select-btns' wx:if="{{detail==3||detail==4}}">
+          <view class='add-btns add-btns-2' bindtap='addCre' formType='submit' data-goodid='{{goods.goodsId}}'>
+              加入购物车
+          </view>    
+          <view class='pay-btns' bindtap="store_info">
+              立即购买
+          </view>
+      </view>
+
+
+</view>
+
+
+ <view class='alert-windows' wx:if="{{detail==0&&group==true}}" bindtap='close_window'>
+
+    <view class='alert' catchtap='open_window'>
+        <image src='../../images/user-add.png' mode='widthFix' class='add-images'></image>
+
+
+        <view class='alert-btns'>
+
+   
+            <view class='windows'>
+               <view class='windowsalert'>
+                <image src='../../images/header.png' mode='widthFix'></image>
+                <image src='../../images/header-iocns.png' mode='widthFix'></image>
+                <image src='../../images/header-iocns.png' mode='widthFix'></image>
+                <image src='../../images/header-iocns.png' mode='widthFix'></image>
+                <image src='../../images/header-iocns.png' mode='widthFix'></image>
+              </view>
+      
+                <view class='tips-conts'>还差   <text>3人</text>  拼团成功</view>
+              </view>
+      
+          <view class='alert-user-add' catchtap='close_window'>
+            参团
+          </view>
+        </view>
+    </view>
+</view> 
+
+
+<store id="store" num="{{num}}" tip="{{tip}}" size="{{goods_size}}" price="{{list.price}}" img="{{list.pic_list[0].pic_url}}" list="{{list}}" goods_id="{{goods_id}}"  bind:myevent="onMyEvent" miaoshaid="{{miaoshaid}}" order="{{order}}" mch_id="{{mch_id}}"></store>
+
+
+
+
+<!-- 立即购买弹出 -->

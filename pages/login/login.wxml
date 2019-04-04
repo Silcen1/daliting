@@ -1,0 +1,11 @@
+<!--pages/login/login.wxml-->
+<view class='picure'>
+    <image src="../../images/logo.png"></image>
+</view> 
+ 
+<view class='contant'>
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">微信一键登录</button>
+</view> 
+
+
+

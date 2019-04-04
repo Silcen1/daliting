@@ -1,0 +1,143 @@
+/* pages/logistics/logistics.wxss */
+page{
+  background-color: #fafafa;
+}
+.top-info{
+	height: 186rpx;
+	background-color: #ffffff;
+  padding-left: 30rpx;
+}
+.info{
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+  padding-left: 60rpx;
+ 
+}
+.list-titles{
+	font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #333333;
+   height: 54rpx;
+  display: flex;
+  align-items: center;
+}
+
+.address-listd{
+  width: 690rpx;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 16px 0px 
+		rgba(0, 0, 0, 0.05);
+	border-radius: 8rpx;
+ 
+}
+.address-box{
+  display: flex;
+  justify-content: center;
+   padding-top: 30rpx;
+}
+.select-time{
+  width: 95rpx;
+  font-family: PingFang-SC-Medium;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #0b0306;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.list{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  height: 120rpx;
+  /* border: 1rpx solid #eee; */
+  display: flex;
+}
+.icon{
+  width: 98rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 99;
+}
+.icon::after{
+  content: "";
+  width: 2rpx;
+  height: 50rpx;
+  background-color: #eee;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2rpx;
+  z-index: 88;
+}
+
+.icons::after{
+  content: "";
+  width: 2rpx;
+  height: 100%;
+  background-color: #eee;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2rpx;
+  z-index: 88;
+}
+.icons-dos::after{
+  content: "";
+  width: 2rpx;
+  height: 50rpx;
+  background-color: #eee;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -2rpx;
+  z-index: 88;
+
+}
+.icon>image{
+  	width: 24rpx;
+    position: relative;
+    z-index: 99;
+}
+.address-infos{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.address-infos>text{
+  font-family: PingFang-SC-Regular;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+.address-infos>view{
+  font-family: PingFang-SC-Medium;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #000000;
+}
+.items{
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}

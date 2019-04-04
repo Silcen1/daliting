@@ -1,0 +1,27 @@
+<!--pages/register/register.wxml-->
+<view class = "logo-box">
+    <image src='../../images/logo.png' mode='widthFix' class="logo"></image> 
+</view>
+
+<view class='user-inputs'>
+
+    <input placeholder-class="user-input-userphone" placeholder="输入手机号" class='user-input-userphones' bindinput='phone'/>
+
+  <view class='coder-box'>
+  
+      <input placeholder-class="user-input-userphone" placeholder="输入验证码" class='user-input-userphones' />
+    
+    <view class='user-send-btn'>
+      输入验证码
+    </view>
+    
+  </view>
+ 
+</view>
+
+<view class='done-btn' catchtap='gotopage'>
+
+        <view class='select-btn'>
+        完成
+        </view>
+</view>

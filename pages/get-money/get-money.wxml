@@ -1,0 +1,64 @@
+<!--pages/get-money/get-money.wxml-->
+<view class='alert-windos'>
+    <view class='alert-tip'>
+        提现方式
+    </view>
+    
+    <view class='select-get'> 
+
+        <view class='select-btn' bindtap='select_zfb' data-id='0'>
+          <image src='{{type==0?"../../images/shop-car-true.png":"../../images/shop-car-false.png"}}' mode='widthFix'></image>
+          支付宝
+        </view>
+ 
+           <view class='select-btn' bindtap='select_zfb' data-id='1'>
+          <image src='{{type==1?"../../images/shop-car-true.png":"../../images/shop-car-false.png"}}' mode='widthFix'> </image>
+          微信
+        </view>
+          <view class='select-btn' bindtap='select_zfb' data-id='2'>
+          <image src='{{type==2?"../../images/shop-car-true.png":"../../images/shop-car-false.png"}}' mode='widthFix'></image>
+          银行卡
+        </view>
+    
+    </view>
+
+    <view class='alert-tip'>
+        提现账号
+
+        <input placeholder='请输入提现账号' class='user-inputs'></input>
+
+
+
+    </view>
+
+    <view class='alert-tip'>
+        提现金额
+
+        <input  class='user-inputs'></input>
+
+        <text>￥</text>
+
+    </view>
+
+    <view class='tips'>
+        <text>注：</text>提现不能低于x元，手续费为提现金额的y%，最高不超过z元
+    </view>
+
+    <view class='tips-btn' bindtap="wait">
+
+        <view class='btns'> 
+  
+          提现
+        </view>
+
+    </view>
+
+
+
+
+
+
+
+
+
+</view>

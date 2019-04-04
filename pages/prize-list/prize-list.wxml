@@ -1,0 +1,10 @@
+<!--pages/prize-list/prize-list.wxml-->
+<view class='list-item' wx:for="{{prize}}" wx:key="{{index}}">
+  <image src='{{item.url}}' mode='widthFix'></image>
+  <view class='contents'>
+      <view style='font-size: 30rpx;'>{{item.name}}</view>
+      <view style='font-size: 24rpx;'>请在2018.12.30号前领取</view>
+      <text style='font-size: 24rpx; 	color: #999999;'>数量1{{item.unit}}</text>
+  </view>
+  <view class ="get-list" data-item="{{item}}" bindtap='prize_details'>领取</view>
+</view>

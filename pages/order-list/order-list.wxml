@@ -1,0 +1,1195 @@
+<!--pages/order-list/order-list.wxml-->
+<view class='order-item'> 
+    <text class='{{type==0?"order-select":""}}' bindtap='order_item' data-id='0'>普通订单</text> 
+    <text class='{{type==1?"order-select":""}}' >拼团订单</text>    <!--bindtap='order_item' data-id='1'-->
+    <text class='{{type==2?"order-select":""}}' >砍价订单</text>  <!--bindtap='order_item' data-id='2'-->
+    <text class='{{type==3?"order-select":""}}' >秒杀订单</text>    <!--bindtap='order_item' data-id='3'-->
+</view>     
+       
+<view class='{{type==0?"order-item-btn":"up"}}' data-id='0'>
+    <text class='{{item==0?"select-btn":""}}' bindtap='item' data-id='0'>全部</text>
+    <text class='{{item==1?"select-btn":""}}' bindtap='item' data-id='1'>待付款</text>
+    <text class='{{item==2?"select-btn":""}}' bindtap='item' data-id='2'>待发货</text>
+    <text class='{{item==3?"select-btn":""}}' bindtap='item' data-id='3'>待收货</text>
+    <text class='{{item==4?"select-btn":""}}' bindtap='item' data-id='4'>待评价</text>
+</view> 
+<view class='{{type==1?"order-item-btn":"up"}}' data-id='1'>
+    <text class='{{order==0?"select-btn":""}}' bindtap='order' data-id='0'>全部</text>
+    <text class='{{order==1?"select-btn":""}}' bindtap='order' data-id='1'>拼团中</text>
+    <text class='{{order==2?"select-btn":""}}' bindtap='order' data-id='2'>拼团成功</text>
+    <text class='{{order==3?"select-btn":""}}' bindtap='order' data-id='3'>拼团失败</text>
+</view>
+<view class='{{type==2?"order-item-btn":"up"}}' data-id='2'>
+    <text class='{{btn==0?"select-btn":""}}' bindtap='btn' data-id='0'>全部</text>
+    <text class='{{btn==1?"select-btn":""}}' bindtap='btn' data-id='1'>砍价中</text>
+    <text class='{{btn==2?"select-btn":""}}' bindtap='btn' data-id='2'>砍价成功</text>
+    <text class='{{btn==3?"select-btn":""}}' bindtap='btn' data-id='3'>砍价失败</text>
+</view>
+<view class='{{type==3?"order-item-btn":"up"}}' data-id='3'>
+    <text class='{{odrer_item==0?"select-btn":""}}' bindtap='odrer_item' data-id='0'>全部</text>
+    <text class='{{odrer_item==1?"select-btn":""}}' bindtap='odrer_item' data-id='1'>待付款</text>
+    <text class='{{odrer_item==2?"select-btn":""}}' bindtap='odrer_item' data-id='2'>待发货</text>
+     <text class='{{odrer_item==3?"select-btn":""}}' bindtap='odrer_item' data-id='3'>待收货</text>
+    <text class='{{odrer_item==4?"select-btn":""}}' bindtap='odrer_item' data-id='4'>待评价</text>
+</view>
+
+
+<!--普通订单-->
+<view wx:if="{{haveList}}">
+<view class='{{type==0?"":"up"}}'> 
+  <!--全部-->
+  <view class='{{item==0?"":"up"}}'>
+    <view  class='order-items' wx:for="{{list.list}}" data-order_id="{{item.order_id}}" wx:key="{{index}}">
+      <view class='nav-top' bindtap='goshop' data-id='{{item.mch.id}}'>
+          <view class='store-image'>
+            <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+            <text>{{item.mch.name}}</text>
+            <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+          </view>
+          <view class='status'>
+            待付款
+          </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='0' data-order_id="{{item.order_id}}">
+        <view class='list-contens'> 
+            <image src='{{item.goods_list[0].goods_pic}}'   mode='widthFix'></image>     <!--图片-->
+            <view class='contens-message'>
+                <view>{{item.goods_list[0].goods_name}}</view>    <!--标题-->
+                <text>{{item.goods_list[0].attr_list[0].attr_group_name}}：{{item.goods_list[0].attr_list[0].attr_name}}</text> 
+                <text wx:if="{{item.goods_list[0].attr_list[1]}}">{{item.goods_list[0].attr_list[1].attr_group_name}}：{{item.goods_list[0].attr_list[1].attr_name}}</text> 
+            </view>
+            <view class='counts'>
+              <text>￥{{item.goods_list[0].price/item.goods_list[0].num}}</text>    <!--价格-->
+              <text class='number-counts'>x{{item.goods_list[0].num}}   </text>    <!--数量-->
+            </view> 
+        </view> 
+      </view> 
+      <view class='counts-text'>
+        <text class='number-counts'>共{{item.goods_list[0].num}}件商品</text> 
+        <text class='counts-texts'>合计：￥{{item.total_price}}</text>
+      </view>
+      <view class='nav-store'>
+         <button open-type="contact" class='open_type'>联系商家</button>
+        <view class='orders' bindtap='status' data-order_id="{{item.order_id}}">去付款</view>
+      </view>
+    </view>
+    <!-- 交易完成2 -->
+    <!-- <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          交易完成
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='3'>
+        <view class='list-contens'>
+        <image src='{{list.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{list.list[0].goods_list[0].goods_name}}</view>
+              <text>规格：{{list.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{list.list[0].goods_list[0].price}}</text>
+            <text class='number-counts'>x{{list.list[0].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{list.list[0].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{list.list[0].goods_list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <button open-type="contact" class='open_type_contact'>联系商家</button>
+      </view>
+    </view> -->
+    <!-- 交易关闭 -->
+    <!-- <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          交易关闭
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='5'>
+        <view class='list-contens'>
+        <image src='{{list.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+            <view>{{list.list[0].goods_list[0].goods_name}}</view>
+            <text>规格：{{list.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{list.list[0].goods_list[0].price}}</text>
+            <text class='number-counts'>x{{list.list[0].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{list.list[0].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{list.list[0].goods_list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view bindtap='nav_store'>取消订单</view>
+      </view>
+    </view> -->
+  <!-- 待发货 -->
+    <view  class='order-items' data-order_id="{{item.order_id}}" wx:for="{{list1.list}}" wx:key="{{index}}"  wx:if="{{list1.list.length!=0}}">
+      <view class='nav-top' bindtap='goshop' data-id='{{item.mch.id}}'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>{{item.mch.name}}</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          待发货
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='1' data-order_id="{{item.order_id}}">
+        <view class='list-contens'>
+        <image src='{{item.goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{item.goods_list[0].goods_name}}</view>
+              <text>{{item.goods_list[0].attr_list[0].attr_group_name}}：{{item.goods_list[0].attr_list[0].attr_name}}</text>
+              <text wx:if="{{item.goods_list[0].attr_list[1]}}">{{item.goods_list[0].attr_list[1].attr_group_name}}：{{item.goods_list[0].attr_list[1].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{item.goods_list[0].price/item.goods_list[0].num}}</text>
+            <text class='number-counts'>x{{item.goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{item.goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{item.total_price}}</text>
+      </view>
+      <view class='nav-store'>
+        <button open-type="contact" class='open_type_contact'>联系商家</button>
+      </view>
+    </view>
+    <!-- 待收货 -->
+    <view  class='order-items' wx:if="{{list2.list.length!=0}}" wx:for="{{list2}}" wx:key="{{index}}">
+      <view class='nav-top' bindtap='goshop' data-id='{{item.mch.id}}'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>{{item.mch.name}}</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          待收货
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='2' data-order_id="{{item.order_id}}">
+        <view class='list-contens'>
+        <image src='{{item.goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{item.goods_list[0].goods_name}}</view>
+              <text>{{item.goods_list[0].attr_list[0].attr_group_name}}：{{item.goods_list[0].attr_list[0].attr_name}}</text>
+              <text wx:if="{{item.goods_list[0].attr_list[1]}}">{{item.goods_list[0].attr_list[1].attr_group_name}}：{{item.goods_list[0].attr_list[1].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{item.goods_list[0].price/item.goods_list[0].num}}</text>
+            <text class='number-counts'>x{{item.goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{item.goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{item.total_price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view bindtap='go_logistics' data-id='{{item.order_id}}'>查看物流</view>
+        <button open-type="contact" class='open_type'>联系商家</button>
+        <view class='orders' bindtap='confirm' data-order_id="{{item.order_id}}">确认收货</view>
+      </view>
+    </view>
+    <!-- 交易完成 --> 
+    <!-- <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          交易完成 
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='3'>
+        <view class='list-contens'>
+        <image src='{{list.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{list.list[0].goods_list[0].goods_name}}</view>
+              <text>规格：{{list.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{list.list[0].goods_list[0].price}}</text>
+            <text class='number-counts'>x{{list.list[0].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{list.list[0].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{list.list[0].goods_list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view bindtap='go_logistics'>查看物流</view>
+        <button open-type="contact" class='open_type'>联系商家</button>
+        <view class='orders' bindtap="go_evaluate">去评价</view>
+      </view>
+    </view> -->
+  </view>
+  <!-- 待付款 --> 
+  <view class='{{item==1?"":"up"}}'>
+    <view  class='order-items' wx:for="{{list.list}}" data-order_id="{{item.order_id}}" wx:key="{{index}}">
+      <view class='nav-top' bindtap='goshop' data-id='{{item.mch.id}}'>
+          <view class='store-image'>
+            <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+            <text>{{item.mch.name}}</text>
+            <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+          </view>
+          <view class='status'>
+            待付款
+          </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='0' data-order_id="{{item.order_id}}">
+        <view class='list-contens'>
+        <image src='{{item.goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{item.goods_list[0].goods_name}}</view>
+              <text>{{item.goods_list[0].attr_list[0].attr_group_name}}：{{item.goods_list[0].attr_list[0].attr_name}}</text>
+              <text wx:if="{{item.goods_list[0].attr_list[1]}}">{{item.goods_list[0].attr_list[1].attr_group_name}}：{{item.goods_list[0].attr_list[1].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{item.goods_list[0].price/item.goods_list[0].num}}</text>
+            <text class='number-counts'>x{{item.goods_list[0].num}}</text>
+          </view>
+        </view> 
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{item.goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{item.total_price}}</text>
+      </view>
+      <view class='nav-store'>
+        <button open-type="contact" class='open_type'>联系商家</button> 
+        <view class='orders' bindtap='status' data-order_id="{{item.order_id}}">去付款</view> 
+      </view>
+    </view>
+  </view>
+  <!-- 待发货 -->
+  <view class='{{item==2?"":"up"}}'>
+    <view  class='order-items' data-order_id="{{item.order_id}}" wx:for="{{list1.list}}" wx:key="{{index}}"  wx:if="{{list1.list.length!=0}}">
+      <view class='nav-top' bindtap='goshop' data-id='{{item.mch.id}}'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>{{item.mch.name}}</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          待发货
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='1' data-order_id="{{item.order_id}}">
+        <view class='list-contens'>
+        <image src='{{item.goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{item.goods_list[0].goods_name}}</view>
+              <text>{{item.goods_list[0].attr_list[0].attr_group_name}}：{{item.goods_list[0].attr_list[0].attr_name}}</text>
+              <text wx:if="{{item.goods_list[0].attr_list[1]}}">{{item.goods_list[0].attr_list[1].attr_group_name}}：{{item.goods_list[0].attr_list[1].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{item.goods_list[0].price/item.goods_list[0].num}}</text>
+            <text class='number-counts'>x{{item.goods_list[0].num}} </text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{item.goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{item.total_price}}</text>
+      </view>
+      <view class='nav-store'>
+     <button open-type="contact" class='open_type'>联系商家</button>
+      </view>
+    </view>
+  </view>
+  <!-- 待收货 -->
+  <view class='{{item==3?"":"up"}}'>
+    <view  class='order-items' wx:for="{{list2}}" wx:key="{{index}}">
+      <view class='nav-top' bindtap='goshop' data-id='{{item.mch.id}}'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>{{item.mch.name}}</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          待收货
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='2' data-order_id='{{item.order_id}}'>
+        <view class='list-contens'>
+        <image src='{{item.goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{item.goods_list[0].goods_name}}</view>
+              <text>{{item.goods_list[0].attr_list[0].attr_group_name}}：{{item.goods_list[0].attr_list[0].attr_name}}</text>
+              <text wx:if="{{item.goods_list[0].attr_list[1]}}">{{item.goods_list[0].attr_list[1].attr_group_name}}：{{item.goods_list[0].attr_list[1].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{item.goods_list[0].price/item.goods_list[0].num}}</text>
+            <text class='number-counts'>x{{item.goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{item.goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{item.total_price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view bindtap='go_logistics' data-id='{{item.order_id}}'>查看物流</view>
+       <button open-type="contact" class='open_type'>联系商家</button>
+        <view class='orders' bindtap='confirm' data-order_id="{{item.order_id}}">确认收货</view>
+      </view>
+    </view>
+  </view>
+  <!-- 交易完成 -->
+  <view class='{{item==4?"":"up"}}'>
+    <view  class='order-items' wx:for="{{list3}}" wx:key="{{index}}">
+      <view class='nav-top' bindtap='goshop' data-id='{{item.mch.id}}'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>{{item.mch.name}}</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          交易完成 
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='3'>
+        <view class='list-contens'>
+        <image src='{{list.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{item.goods_list[0].goods_name}}</view>
+              <text>{{item.goods_list[0].attr_list[0].attr_group_name}}：{{item.goods_list[0].attr_list[0].attr_name}}</text>
+              <text wx:if="{{item.goods_list[0].attr_list[1]}}">{{item.goods_list[0].attr_list[1].attr_group_name}}：{{item.goods_list[0].attr_list[1].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{item.goods_list[0].price/item.goods_list[0].num}}</text>
+            <text class='number-counts'>x{{item.goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{item.goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{item.total_price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view bindtap='go_logistics' data-id='{{item.order_id}}' wx:if="{{item.is_comment==0}}">查看物流</view>
+       <button open-type="contact" class='open_type'>联系商家</button>
+        <view class='orders' bindtap="go_evaluate" data-id='{{item.order_id}}' data-name="{{item.goods_list[0].goods_name}}" wx:if="{{item.is_comment==0}}">去评价</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--拼团订单-->
+<view class='{{type==1?"":"up"}}'>
+  <!--全部-->
+  <view class='{{order==0?"":"up"}}'>
+  <!-- 拼团中 -->
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          拼团中
+        </view>
+      </view>
+      <view class='list-items' catchtap='listitems' data-select='0' >
+        <view class='list-contens'>
+        <image src='{{assemble.data.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{assemble.data.list[0].goods_list[0].goods_name}}</view>
+              <text>{{assemble.data.list[0].goods_list[0].attr_list[0].attr_group_name}}：{{assemble.data.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{assemble.data.list[0].pay_price}}</text>
+            <text class='number-counts'>x{{assemble.data.list[0].goods_list[0].num}}</text>
+          </view> 
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{assemble.data.list[0].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{assemble.data.list[0].total_price}}</text>
+      </view> 
+      <view class='nav-store'>
+        <view class='nav' bindtap='nav_store'>放弃拼团</view> 
+        <button open-type="contact" class='open_type'>联系商家</button>
+        <button class='onshare' bindtap='onShareAppMessage' open-type="share">邀请好友</button>
+      </view>
+    </view>
+    <!-- 拼团失败 -->
+    <view class='order-items'> 
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          拼团失败
+        </view>
+      </view>
+      <view class='list-items' catchtap='listitems' data-select='1'>
+        <view class='list-contens'>
+        <image src='{{assemble.data.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{assemble.data.list[0].goods_list[0].goods_name}}</view>
+              <text>{{assemble.data.list[0].goods_list[0].attr_list[0].attr_group_name}}：{{assemble.data.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{assemble.data.list[0].pay_price}}</text>
+            <text class='number-counts'>x{{assemble.data.list[0].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{assemble.data.list[0].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{assemble.data.list[0].total_price}}</text>
+      </view>
+      <view class='nav-store'>
+      <button open-type="contact" class='open_type_contact'>联系商家</button>
+      </view>
+    </view>
+    <!-- 拼团成功 -->
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          拼团成功
+        </view>
+      </view>
+      <view class='list-items' catchtap='listitems' data-select='2'>
+        <view class='list-contens'>
+        <image src='{{assemble.data.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{assemble.data.list[0].goods_list[0].goods_name}}</view>
+              <text>{{assemble.data.list[0].goods_list[0].attr_list[0].attr_group_name}}：{{assemble.data.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{assemble.data.list[0].pay_price}}</text>
+            <text class='number-counts'>x{{assemble.data.list[0].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{assemble.data.list[0].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{assemble.data.list[0].total_price}}</text>
+      </view>
+      <view class='nav-store'>
+      <button open-type="contact" class='open_type_contact'>联系商家</button>
+      </view>
+    </view>
+  </view>
+  <!-- 拼团中 --> 
+  <view class='{{order==1?"":"up"}}'>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          拼团中
+        </view>
+      </view>
+      <view class='list-items' catchtap='listitems' data-select='0' >
+        <view class='list-contens'>
+        <image src='{{assemble.data.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{assemble.data.list[0].goods_list[0].goods_name}}</view>
+              <text>{{assemble.data.list[0].goods_list[0].attr_list[0].attr_group_name}}：{{assemble.data.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{assemble.data.list[0].pay_price}}</text>
+            <text class='number-counts'>x{{assemble.data.list[0].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{assemble.data.list[0].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{assemble.data.list[0].total_price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view class='nav' bindtap='nav_store'>放弃拼团</view> 
+        <button open-type="contact" class='open_type'>联系商家</button>
+        <button class='onshare' bindtap='onShareAppMessage' open-type="share">邀请好友</button>
+      </view>
+    </view>
+  </view>
+  <!-- 拼团失败 -->
+  <view  class='{{order==3?"":"up"}}'>
+    <view class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          拼团失败
+        </view>
+      </view>
+      <view class='list-items' catchtap='listitems' data-select='1'>
+        <view class='list-contens'>
+        <image src='{{assemble.data.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{assemble.data.list[0].goods_list[0].goods_name}}</view>
+              <text>{{assemble.data.list[0].goods_list[0].attr_list[0].attr_group_name}}：{{assemble.data.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{assemble.data.list[0].pay_price}}</text>
+            <text class='number-counts'>x{{assemble.data.list[0].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{assemble.data.list[0].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{assemble.data.list[0].total_price}}</text>
+      </view>
+      <view class='nav-store'>
+      <button open-type="contact" class='open_type_contact'>联系商家</button>
+      </view>
+    </view>
+  </view>
+  <!-- 拼团成功 -->
+  <view class='{{order==2?"":"up"}}'>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          拼团成功
+        </view>
+      </view>
+      <view class='list-items' catchtap='listitems' data-select='2'>
+        <view class='list-contens'>
+        <image src='{{assemble.data.list[0].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{assemble.data.list[0].goods_list[0].goods_name}}</view>
+              <text>{{assemble.data.list[0].goods_list[0].attr_list[0].attr_group_name}}：{{assemble.data.list[0].goods_list[0].attr_list[0].attr_name}}</text>
+          </view> 
+          <view class='counts'>
+            <text>￥{{assemble.data.list[0].pay_price}}</text>
+            <text class='number-counts'>x{{assemble.data.list[0].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{assemble.data.list[0].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{assemble.data.list[0].total_price}}</text>
+      </view>
+      <view class='nav-store'>
+      <button open-type="contact" class='open_type_contact'>联系商家</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!--砍价订单-->
+<view class='{{type==2?"":"up"}}'>
+  <!--全部-->
+  <view class='{{btn==0?"":"up"}}'>
+  <!-- 砍价中 -->
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          砍价中
+        </view>
+      </view>
+      <view class='list-items' data-select='0' catchtap='selecttbn'>
+        <view class='list-contens'>
+        <image src='{{list.data.list[2].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{list.data.list[2].goods_list[0].goods_name}}</view>
+              <text>规格：{{list.data.list[2].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{list.data.list[2].goods_list[0].price}}</text>
+            <text class='number-counts'>x{{list.data.list[2].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-store'>已砍价</text>
+        <text class='counts-texts-store'>￥{{bargain.data.bargain_info.money}}</text>
+      </view>
+      <view class='counts-text'>
+        <text class='number-countss'>共{{list.data.list[2].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{list.data.list[2].goods_list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+      <button open-type="contact" class='open'>联系商家</button>
+      <button bindtap='onShareAppMessage' open-type="share" class='open_type'>邀请好友</button>  
+      <view style='margin-left:18rpx;' class='onshare' bindtap='pays'>立即支付</view>  
+      </view>
+    </view>
+    <!-- 砍价成功 -->
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          砍价成功
+        </view>
+      </view>
+      <view class='list-items' data-select='1' catchtap='selecttbn'>
+        <view class='list-contens'>
+        <image src='{{list.data.list[2].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{list.data.list[2].goods_list[0].goods_name}}</view>
+              <text>规格：{{list.data.list[2].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{list.data.list[2].goods_list[0].price}}</text>
+            <text class='number-counts'>x{{list.data.list[2].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-store'>已砍价</text>
+        <text class='counts-texts-store'>￥{{bargain.data.bargain_info.money}}</text>
+      </view>
+      <view class='counts-text'>
+        <text class='number-countss'>共{{list.data.list[2].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{list.data.list[2].goods_list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+      <button open-type="contact" class='open_type'>联系商家</button>
+      <view style='margin-left:18rpx;' class='pays' bindtap='pays'>立即支付</view>  
+      </view>
+    </view>
+    <!-- 砍价失败 -->
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          砍价失败
+        </view>
+      </view>
+      <view class='list-items' data-select='2' catchtap='selecttbn'>
+        <view class='list-contens'>
+        <image src='{{list.data.list[2].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{list.data.list[2].goods_list[0].goods_name}}</view>
+              <text>规格：{{list.data.list[2].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{list.data.list[2].goods_list[0].price}}</text>
+            <text class='number-counts'>x{{list.data.list[2].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='nav-store'>
+      <button open-type="contact" class='open_type_contact'>联系商家</button>
+      </view>
+    </view>
+  </view>
+  <!--砍价中  -->
+  <view class='{{btn==1?"":"up"}}'>
+    <view class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          砍价中
+        </view>
+      </view>
+      <view class='list-items' data-select='0' catchtap='selecttbn'>
+        <view class='list-contens'>
+        <image src='{{list.data.list[2].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{list.data.list[2].goods_list[0].goods_name}}</view>
+              <text>规格：{{list.data.list[2].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{list.data.list[2].goods_list[0].price}}</text>
+            <text class='number-counts'>x{{list.data.list[2].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-store'>已砍价</text>
+        <text class='counts-texts-store'>￥{{bargain.data.bargain_info.money}}</text>
+      </view>
+      <view class='counts-text'>
+        <text class='number-countss'>共{{list.data.list[2].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{list.data.list[2].goods_list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <button open-type="contact" class='open'>联系商家</button>
+        <button bindtap='onShareAppMessage' open-type="share" class='open_type'>邀请好友</button> 
+        <view style='margin-left:18rpx;' class='onshare' bindtap='pays'>立即支付</view>   
+      </view>
+    </view>
+  </view>
+  <!--砍价成功 -->
+  <view class='{{btn==2?"":"up"}}'>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          砍价成功
+        </view>
+      </view>
+      <view class='list-items' data-select='1' catchtap='selecttbn'>
+        <view class='list-contens'>
+        <image src='{{list.data.list[2].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{list.data.list[2].goods_list[0].goods_name}}</view>
+              <text>规格：{{list.data.list[2].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{list.data.list[2].goods_list[0].price}}</text>
+            <text class='number-counts'>x{{list.data.list[2].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-store'>已砍价</text>
+        <text class='counts-texts-store'>￥{{bargain.data.bargain_info.money}}</text>
+      </view>
+      <view class='counts-text'>
+        <text class='number-countss'>共{{list.data.list[2].goods_list[0].num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{list.data.list[2].goods_list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+      <button open-type="contact" class='open_type'>联系商家</button>
+      <view style='margin-left:18rpx;' class='onshare' bindtap='pays'>立即支付</view>  
+      </view>
+    </view>
+  </view>
+ <!--砍价失败 -->
+  <view class='{{btn==3?"":"up"}}'>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          砍价失败
+        </view>
+      </view>
+      <view class='list-items' data-select='2' catchtap='selecttbn'>
+        <view class='list-contens'>
+        <image src='{{list.data.list[2].goods_list[0].goods_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{list.data.list[2].goods_list[0].goods_name}}</view>
+              <text>规格：{{list.data.list[2].goods_list[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{list.data.list[2].goods_list[0].price}}</text>
+            <text class='number-counts'>x{{list.data.list[2].goods_list[0].num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='nav-store'>
+      <button open-type="contact" class='open_type_contact'>联系商家</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--秒杀订单-->
+<view class='{{type==3?"":"up"}}'>
+    <!--全部-->
+  <view class='{{odrer_item==0?"":"up"}}'>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          待付款
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='0'>
+        <view class='list-contens'>
+        <image src='{{kill.data.list[0].cover_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{kill.data.list[0].name}}</view>
+              <text>规格：{{kill.data.list[0].attr[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{kill.data.list[0].miaosha_price}}</text>
+            <text class='number-counts'>x{{kill.data.list[0].miaosha_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{kill.data.list[0].miaosha_num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{kill.data.list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+         <button open-type="contact" class='open_type'>联系商家</button>
+        <view class='orders' bindtap='status' data-order_id="{{item.order_id}}">去付款</view>
+      </view>
+    </view>
+    <!-- 交易完成2 -->
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          交易完成
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='3'>
+        <view class='list-contens'>
+        <image src='{{kill.data.list[0].cover_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{kill.data.list[0].name}}</view>
+              <text>规格：{{kill.data.list[0].attr[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{kill.data.list[0].miaosha_price}}</text>
+            <text class='number-counts'>x{{kill.data.list[0].miaosha_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{kill.data.list[0].miaosha_num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{kill.data.list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <button open-type="contact" class='open_type_contact'>联系商家</button>
+      </view>
+    </view>
+    <!-- 交易关闭 -->
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          交易关闭
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='5'>
+        <view class='list-contens'>
+        <image src='{{kill.data.list[0].cover_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+            <view>{{kill.data.list[0].name}}</view>
+            <text>规格：{{kill.data.list[0].attr[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{kill.data.list[0].miaosha_price}}</text>
+            <text class='number-counts'>x{{kill.data.list[0].miaosha_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{kill.data.list[0].miaosha_num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{kill.data.list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view bindtap='nav_store'>取消订单</view>
+      </view>
+    </view>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          待发货
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='1'>
+        <view class='list-contens'>
+        <image src='{{kill.data.list[0].cover_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{kill.data.list[0].name}}</view>
+              <text>规格：{{kill.data.list[0].attr[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{kill.data.list[0].miaosha_price}}</text>
+            <text class='number-counts'>x{{kill.data.list[0].miaosha_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{kill.data.list[0].miaosha_num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{kill.data.list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <button open-type="contact" class='open_type_contact'>联系商家</button>
+      </view>
+    </view>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          待收货
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='2'>
+        <view class='list-contens'>
+        <image src='{{kill.data.list[0].cover_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{kill.data.list[0].name}}</view>
+              <text>规格：{{kill.data.list[0].attr[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{kill.data.list[0].miaosha_price}}</text>
+            <text class='number-counts'>x{{kill.data.list[0].miaosha_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{kill.data.list[0].miaosha_num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{kill.data.list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view bindtap='go_logistics' data-id='{{item.order_id}}'>查看物流</view>
+        <button open-type="contact" class='open_type'>联系商家</button>
+        <view class='orders' bindtap='nav_store_orders'>确认收货</view>
+      </view>
+    </view>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          交易完成 
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='3'>
+        <view class='list-contens'>
+        <image src='{{kill.data.list[0].cover_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{kill.data.list[0].name}}</view>
+              <text>规格：{{kill.data.list[0].attr[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{kill.data.list[0].miaosha_price}}</text>
+            <text class='number-counts'>x{{kill.data.list[0].miaosha_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{kill.data.list[0].miaosha_num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{kill.data.list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view bindtap='go_logistics'>查看物流</view>
+        <button open-type="contact" class='open_type'>联系商家</button>
+        <view class='orders' bindtap="go_evaluate">去评价</view>
+      </view>
+    </view>
+  </view>
+  <!-- 待付款 -->
+  <view class='{{odrer_item==1?"":"up"}}'>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          待付款
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='0'>
+        <view class='list-contens'>
+        <image src='{{kill.data.list[0].cover_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{kill.data.list[0].name}}</view>
+              <text>规格：{{kill.data.list[0].attr[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{kill.data.list[0].miaosha_price}}</text>
+            <text class='number-counts'>x{{kill.data.list[0].miaosha_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{kill.data.list[0].miaosha_num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{kill.data.list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <button open-type="contact" class='open_type'>联系商家</button>
+         <view class='orders' bindtap='status' data-order_id="{{item.order_id}}">去付款</view>
+      </view>
+    </view>
+  </view>
+  <!-- 待发货 -->
+  <view class='{{odrer_item==2?"":"up"}}'>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          待发货
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='1'>
+        <view class='list-contens'>
+        <image src='{{kill.data.list[0].cover_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{kill.data.list[0].name}}</view>
+              <text>规格：{{kill.data.list[0].attr[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{kill.data.list[0].miaosha_price}}</text>
+            <text class='number-counts'>x{{kill.data.list[0].miaosha_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{kill.data.list[0].miaosha_num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{kill.data.list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+       <button open-type="contact" class='open_type'>联系商家</button>
+      </view>
+    </view>
+  </view>
+  <!-- 待收货 -->
+  <view class='{{odrer_item==3?"":"up"}}'>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          待收货
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='2'>
+        <view class='list-contens'>
+        <image src='{{kill.data.list[0].cover_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{kill.data.list[0].name}}</view>
+              <text>规格：{{kill.data.list[0].attr[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{kill.data.list[0].miaosha_price}}</text>
+            <text class='number-counts'>x{{kill.data.list[0].miaosha_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{kill.data.list[0].miaosha_num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{kill.data.list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view bindtap='go_logistics'>查看物流</view>
+        <button open-type="contact" class='open_type'>联系商家</button>
+        <view class='orders'>确认收货</view>
+      </view>
+    </view>
+  </view>
+  <!-- 交易完成 -->
+  <view class='{{odrer_item==4?"":"up"}}'>
+    <view  class='order-items'>
+      <view class='nav-top'>
+        <view class='store-image'>
+        <image src='../../images/shop-car-logo.png' mode='widthFix' class='images-logos'></image>
+        <text>阿希专卖店</text>
+          <image src='../../images/more-user.png' mode='widthFix' class='iamges-mores'></image>
+        </view>
+        <view class='status'>
+          交易完成 
+        </view>
+      </view>
+      <view class='list-items' catchtap='selectitem' data-select='3'>
+        <view class='list-contens'>
+        <image src='{{kill.data.list[0].cover_pic}}' mode='widthFix'></image>
+          <view class='contens-message'>
+              <view>{{kill.data.list[0].name}}</view>
+              <text>规格：{{kill.data.list[0].attr[0].attr_list[0].attr_name}}</text>
+          </view>
+          <view class='counts'>
+            <text>￥{{kill.data.list[0].miaosha_price}}</text>
+            <text class='number-counts'>x{{kill.data.list[0].miaosha_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='counts-text'>
+        <text class='number-counts'>共{{kill.data.list[0].miaosha_num}}件商品</text>
+        <text class='counts-texts'>合计：￥{{kill.data.list[0].price}}</text>
+      </view>
+      <view class='nav-store'>
+        <view bindtap='go_logistics'>查看物流</view> 
+       <button open-type="contact" class='open_type'>联系商家</button>
+        <view class='orders' bindtap="go_evaluate">去评价</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+</view> <!--wx:if-->
+
+
+<view wx:if="{{list.length==0&&list1.length==0&&list2.length==0&&list3.length==0}}" class="list_none">
+您还没有订单哦~
+    <!-- <view class="list_none">您还没有订单哦~</view> -->
+  </view>

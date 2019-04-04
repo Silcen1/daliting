@@ -1,0 +1,80 @@
+<!--pages/shop-car/shop-car.wxml-->
+<block wx:if="{{list.length==0}}">
+
+
+  <view class='shop-status'>
+    <image src='../../images/shop-car-status.png' mode='widthFix' class="stauts-images"></image>
+
+
+    <view class='shop-car-text'>
+      购物车还是空的哦！
+    </view>
+
+    <view class='select-click-btn' bindtap='look'>
+      去逛逛
+    </view>
+  </view>
+
+
+</block>
+ 
+<view class="pages">
+ 
+  <view wx:if="{{hasList}}">
+  <!-- 编辑 -->
+  <!-- <view class='edit'> -->
+  <!-- <label class='edit_btn' bindtap='btn_edit'>{{edit_name}}</label> -->
+  <!-- </view> --> 
+  <!-- 列表 -->
+  <view class="list" wx:for="{{list}}" wx:key="{{index}}">
+    <!-- radio选择IOCN -->
+    <!-- <icon wx:if="{{item.selected}}"   type="success" color="#405A8F;" data-index="{{index}}" class="radio_chek" bindtap="selectList" /> -->
+    <image  wx:if="{{item.selected}}"  data-index="{{index}}" data-id="{{item.cart_id}}"  class="radio_chek" bindtap="selectList" src='../../images/shop-car-true.png'></image>
+    <!-- <icon wx:else type="circle" class="radio_chek" data-index="{{index}}" bindtap="selectList" /> --> 
+<!-- else -->  
+    <image wx:else src='../../images/shop-car-false.png'  class="radio_chek" data-index="{{index}}" data-id="{{item.cart_id}}"  bindtap="selectList"></image> 
+    <!-- 列表标题 -->
+    <view class='stote-info'> 
+      <view class="info-img">
+         <image class="list_img" src="{{item.goods_pic}}"></image>
+      </view>
+      <!-- 列表商品图片 -->
+      <view class="info-msg">
+        <view class="list_name">{{item.goods_name}}</view>
+        <!-- 规格 --> 
+        <view class="cart_g_name">{{item.attr_list[0].attr_group_name}}:{{item.attr_list[0].attr_name}}</view>
+        <view class="cart_g_name" wx:if="{{item.attr_list[1]}}">{{item.attr_list[1].attr_group_name}}:{{item.attr_list[1].attr_name}}</view>
+        <!-- 价格 -->
+        <view class="list_price">￥{{item.price}}</view>
+      </view>
+      <!-- 商品数量加减  style='display:{{show_edit}}'-->
+      <view style='display:{{show_edit}}'>
+        <view class="carts-num">
+          <!--减按钮  --> 
+          <image class="addbtn" src='../../images/nuadd.png' bindtap="btn_minus" data-obj="{{obj}}" data-index="{{index}}">-</image>
+          <!-- 文本框值 -->
+          <!-- <input class="view_text_center" disabled='disabled' value="{{item.num}}" bindinput='input_num' data-index="{{index}}"></input> -->
+          <label class="view_text_center"  bindinput='input_num' data-index="{{index}}">{{item.num}}</label>
+          <!-- <text class="cart-count-num">{{item.num}}</text> -->
+          <!-- 加按钮-->
+          <image class="addbtn" src='../../images/add.png' bindtap="btn_add" data-index="{{index}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+    <!-- 固定底部 -->
+    <view class="cont_bot">
+    <!-- 全选ICON -->
+    <image  class="total-select" bindtap="selectAll"src='{{selectAllStatus?"../../images/shop-car-true.png":"../../images/shop-car-false.png"}}'></image>
+    <!-- 全选标题 --> 
+    <text class='sel_count_name'>全选</text>
+    <!-- 合计金额 -->
+    <lable class="count_price">合计：<text>￥{{totalPrice}}</text></lable>
+    <!-- 提交订单 -->
+    <view class="submit" bindtap='btn_submit_order'>结算</view>
+    <view class='{{type==0?"deit-btn":"up"}}' bindtap='deit_btn' data-id='1'>编辑</view>
+    <view class='{{type==1?"deit-btn":"up"}}' bindtap='deletes'>删除</view>
+    <view class='{{type==1?"submit":"up"}}' bindtap='deit_btn' data-id='0'>完成</view>
+    </view>  
+  </view> 
+</view>

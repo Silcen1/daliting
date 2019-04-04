@@ -1,0 +1,65 @@
+<!--components/store/store.wxml-->
+<view class='alert-windows' hidden='{{!isShow}}'>
+
+    <view class='alert'>
+
+          <view class='alert-nav'>
+                <view class='nav-windows'>
+                    <image src='{{img}}' mode='widthFix'></image>
+
+
+                    <view class='nav-alert-images'>
+                        <text class='alert-noney'><text class="min">￥</text>{{sum.length==0?price:sum}}</text>
+                        <text class='alert-crul'>已选  -  {{select}}  -  {{selects}}</text>
+                    </view>
+                </view> 
+                <image src='../../images/close-icon.png' mode='widthFix' bindtap='go_detail'></image>
+          </view>
+
+
+
+          <view class='select-items'>
+
+              <text>{{size[0].attr_group_name}}</text>
+
+              <view class='items'>
+                <text class='{{select==item.attr_name?"select-btnst":""}}' wx:for="{{size[0].attr_list}}" wx:key="{{index}}" bindtap='select_btnst' data-item='{{item.attr_name}}'>{{item.attr_name}}</text>
+              </view>
+ 
+          </view>
+
+
+          <view class='select-items'>
+
+              <text>{{size[1].attr_group_name}}</text>
+
+              <view class='items'>
+                <text class='{{selects==item.attr_name?"select-btnst":""}}' wx:for="{{size[1].attr_list}}" wx:key="{{index}}" bindtap='select_btnsts' data-item='{{item.attr_name}}'>{{item.attr_name}}</text>
+              </view>
+ 
+          </view>
+
+
+          <view class='number-border'>
+            <view>数量</view>
+            <view class='select-add'>
+                  <view  bindtap='count_number_nuadd' class=''>
+                    <image src='../../images/nuadd.png' mode='widthFix' class='in-image'> </image>
+                  </view>
+                  <view class='count-number'>{{num}}</view>
+                  <view bindtap='count_number_add' class=''>
+                    <image src='../../images/add.png' mode='widthFix' class='in-image'> </image>
+                  </view>   
+            </view>
+          </view>
+
+          <view class='isok' bindtap='create_order'>
+                <view>
+                  {{tip}}
+                </view>
+          </view>
+          
+
+    </view>
+</view>
+

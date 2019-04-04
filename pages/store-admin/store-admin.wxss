@@ -1,0 +1,341 @@
+/* pages/class-list/class-list.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+.share{
+  display: flex;
+  padding-top: 30rpx;
+  height: 338rpx;
+  padding-right: 30rpx;
+  padding-left: 30rpx;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+.bg{
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.share-nav{
+  width: 690rpx;
+	border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 33rpx;
+  height: 64rpx;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-top: 30rpx;
+}
+.share-icon{
+  	width: 40rpx;
+}
+.open{
+  width: 55rpx;
+  border-left: 1rpx solid #eee;
+  padding-left: 19rpx;
+  height: 24rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 17rpx;
+}
+.share-icon-open{
+  width: 22rpx;
+}
+.placeholder{
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 38rpx;
+	letter-spacing: 1px;
+	color: #999999;
+  flex: 1;
+}
+.search-btn{
+  font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0px;
+	color: #ffffff;
+  width: 120rpx;
+  text-align: center;
+	height: 60rpx;
+	background-color: #ff3300;
+	border-radius: 10rpx;
+  margin-left: 30rpx;
+}
+
+.class-box{
+  display: flex;
+  justify-content: center;
+  font-family: PingFang-SC-Regular;
+	font-size: 28rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #262626;
+  height: 70%;
+  align-items: center;
+}
+
+
+
+.list-store-box{
+  padding: 30rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 10rpx;
+}
+.list-items{
+  width: 330rpx;
+  	background-color: #ffffff;
+	box-shadow: 1px 1px 16px 0px 
+		rgba(0, 0, 0, 0.05);
+	border-radius: 8px;
+  padding-bottom: 15rpx;
+}
+.list-items>image{
+  	width: 330rpx;
+}
+.list-items{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+}
+.list-items>text{
+
+	font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 30rpx;
+	letter-spacing: 0px;
+	color: #000000;
+  margin-top: 17rpx;
+}
+.other-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 29rpx;
+  padding-left: 13rpx;
+  padding-right: 13rpx;
+}
+
+
+.other-info>text{
+  font-family: PingFang-SC-Regular;
+	font-size: 20rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+.other-info>view{
+  font-family: DINPro-Regular;
+	font-size: 20rpx;
+	font-weight: normal;
+	letter-spacing: 0px;
+	color: #cccccc;
+  
+}
+.other-info .noney{
+  font-family: DINPro-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	letter-spacing: 0px;
+	color: #ff3300;
+  margin-right: 23rpx;
+}
+
+
+.logo{
+  padding-top: 30rpx;
+}
+.logo>image{
+  width: 120rpx;
+  
+}
+.logo-store-name{
+  font-family: PingFang-SC-Medium;
+	font-size: 36rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ffffff;
+}
+
+.scroll-views{
+  height: 176rpx;
+  overflow: hidden;
+  background: #fff;
+  white-space: nowrap;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-views-images{
+  height: 176rpx;
+  line-height: 176rpx;
+  overflow: hidden;
+  background: #fff;
+  white-space: nowrap;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  display: flex;
+  align-items: center;
+  padding-top: 30rpx;
+  margin-top: 30rpx;
+}
+.select-item{
+
+width: auto;
+height: auto;
+margin-right: 33rpx;
+display: inline-block;
+
+font-family: PingFang-SC-Medium;
+font-size: 24rpx;
+font-weight: normal;
+font-stretch: normal;
+letter-spacing: 0px;
+color: #333333;
+}
+
+.select-item-view{
+
+margin-right: 33rpx;
+display: inline-block;
+font-family: PingFang-SC-Medium;
+font-size: 24rpx;
+font-weight: normal;
+font-stretch: normal;
+letter-spacing: 0px;
+color: #333333;
+
+  width: 586rpx;
+	height: 176rpx;
+  line-break: 176rpx;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 16rpx 0px 
+		rgba(0, 0, 0, 0.15);
+	border-radius: 25rpx;
+  margin-bottom: 30rpx;
+}
+
+
+
+
+.select-btn{
+
+	height: 36rpx;
+	background-color: #ff3300;
+	border-radius: 18rpx;
+  color: #fff;
+  padding-left: 19rpx;
+  padding-right: 18rpx;
+}
+.list-items{
+  /* height: 236rpx; */
+}
+.items{
+  width: 586rpx;
+	height: 176rpx;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 16rpx 0px 
+		rgba(0, 0, 0, 0.05);
+	border-radius: 25rpx;
+}
+
+
+.select-items{
+  width: auto;
+  height: auto;
+  margin-right: 33rpx;
+  display: inline-block;
+
+  font-family: PingFang-SC-Medium;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #333333;
+}
+.container-items-scroll-view{
+  width: 586rpx;
+	height: 176rpx;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 16rpx 0px 
+		rgba(0, 0, 0, 0.05);
+	border-radius: 25rpx;
+}
+.money-view{
+  font-family: DINPro-Medium;
+	font-size: 60rpx;
+	font-weight: normal;
+	letter-spacing: 0px;
+	color: #ff3300;
+  display: flex;
+  align-items: center;
+  height: 176rpx;
+}
+.select-view-umage{
+  display: flex;
+}
+.select-view-sors{
+  display: flex;
+  height: 176rpx;
+
+}
+.select-view-sors-money{
+  font-family: DINPro-Medium;
+	font-size: 60rpx;
+	font-weight: normal;
+	letter-spacing: 0px;
+	color: #ff3300;
+  height: 176rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 15rpx;
+}
+.class-sors{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15rpx;
+  flex: 1;
+  padding-right: 15rpx;
+}
+.class-sors>view{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.get-btn-sors{
+  display: flex;
+  align-items: center;
+  margin-right: 30rpx;
+}
+.get-btn-sors .get-sors-btn{
+  font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #fff;
+  display: inline-block;
+  width: 120rpx;
+  line-break: 48rpx;
+	line-height: 48rpx;
+	background-color: #ff3300;
+	border-radius: 24rpx;
+  text-align: center;
+
+}

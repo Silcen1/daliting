@@ -1,0 +1,15 @@
+<!--pages/user-sever/user-sever.wxml-->
+<view class='list-items'>
+<!-- 在线客服 -->
+  <text>{{detail.data.menus[5].name}}</text> 
+    <image src='{{detail.data.menus[5].icon}}' mode='widthFix'></image>
+</view>
+<view class='list-items'>
+<!-- 联系我们 -->
+    <text>{{detail.data.menus[6].name}}</text>
+    <image src='{{detail.data.menus[6].icon}}' mode='widthFix'></image>
+</view>
+
+
+ 
+ 

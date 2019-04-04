@@ -1,0 +1,111 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/user/user",
+    "pages/cart/cart",
+    "pages/search/search",
+    "pages/index/index",
+    "pages/address/address",
+    "pages/cat/cat",
+    "pages/create-order/create-order",
+    "pages/address-edit/address-edit",
+    "pages/time/time",
+    "pages/city/city", 
+    "pages/register-password/register-password",
+    "pages/user-self/user-self",
+    "pages/my-package/my-package",
+    "pages/recharge/recharge",
+    "pages/get-money/get-money",
+    "pages/wait/wait",
+    "pages/done/done",
+    "pages/coupon/coupon",
+    "pages/user-sever/user-sever",
+    "pages/order-list/order-list",
+    "pages/order-info-nudone/order-info-nudone",
+    "pages/order-info-send/order-info-send",
+    "pages/order-info-loading/order-info-loading",
+    "pages/order-info-done/order-info-done",
+    "pages/order-info-close/order-info-close",
+    "pages/booking-loading/booking-loading",
+    "pages/booking-close/booking-close",
+    "pages/booking-ok/booking-ok",
+    "pages/bargain-loading/bargain-loading",
+    "pages/bargain-ok/bargain-ok",
+    "pages/bargain-err/bargain-err",
+    "pages/after-loading/after-loading",
+    "pages/after-agree/after-agree",
+    "pages/after-send/after-send",
+    "pages/refund-start/refund-start",
+    "pages/refund-end/refund-end",
+    "pages/evaluate/evaluate",
+    "pages/logistics/logistics",
+    "pages/spell-list/spell-list",
+    "pages/after-list/after-list",
+    "pages/bargain-list/bargain-list",
+    "pages/search-return/search-return",
+    "pages/store-list/store-list",
+    "pages/store-info/store-info",
+    "pages/server/server",
+    "pages/pay-done/pay-done",
+    "pages/puzzle/puzzle",
+    "pages/puzzle-list/puzzle-list",
+    "pages/ecurities/ecurities",
+    "pages/securities/securities",
+    "pages/bargain-info/bargain-info",
+    "pages/bargain-admin/bargain-admin",
+    "pages/share-admin/share-admin",
+    "pages/store-admin/store-admin",
+    "pages/prize-list/prize-list",
+    "pages/prize-info/prize-info",
+    "pages/prize-admin/prize-admin",
+    "pages/elastic-frame/elastic-frame",
+    "pages/upload/upload",
+    "pages/set-password/set-password",
+    "pages/prize-rule/prize-rule"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "大礼厅",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "selectedColor": "#ff3300",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/black_icon_0.png",
+        "selectedIconPath": "images/red_icon_0.png"
+      },
+      {
+        "pagePath": "pages/cat/cat",
+        "text": "分类",
+        "iconPath": "images/black_icon_1.png",
+        "selectedIconPath": "images/red_icon_1.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/black_icon_2.png",
+        "selectedIconPath": "images/red_icon_2.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我",
+        "iconPath": "images/black_icon_3.png",
+        "selectedIconPath": "images/red_icon_3.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxe5f52902cf4de896"
+  ]
+}

@@ -1,0 +1,49 @@
+/* pages/pay-done/pay-done.wxss */
+page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.status{
+  width: 120rpx;
+}
+.statu-tips{
+  font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0px;
+	color: #000000;
+  width: 100%;
+  text-align: center;
+}
+.pack{
+  font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 60rpx;
+	letter-spacing: 0px;
+	color: #999999;
+  width: 100%;
+   text-align: center;
+}
+.done-isok{
+  width: 300rpx;
+	height: 64rpx;
+	background-color: #ff3300;
+	border-radius: 32rpx;
+  text-align: center;
+  font-family: PingFang-SC-Medium;
+	font-size: 30prx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 64rpx;
+	letter-spacing: 0px;
+	color: #ffffff;
+  margin-top: 60rpx;
+}

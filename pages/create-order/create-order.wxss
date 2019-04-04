@@ -1,0 +1,224 @@
+/* pages/create-order/create-order.wxss */
+page{
+  background-color: #fafafa;
+}
+.address{
+  display: flex;
+  align-items: center;
+  padding: 60rpx 30rpx;
+  background-color: #fff;
+}
+.address-info{
+  flex: 1;
+  padding-left: 30rpx;
+  padding-right: 100rpx;
+}
+.address-info>text{
+  font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #000000;
+}
+.address-info>view{
+  font-family: PingFang-SC-Regular;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+.address-infos{
+  height: 366rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  padding-top: 30rpx;
+  flex-direction: column;
+  align-items: center;
+}
+.user_name{
+  margin-right:30rpx;
+}
+.store-info{
+  width: 690rpx;
+	height: 220rpx;
+	background-color: #ffffff;
+	box-shadow: 1rpx 1rpx 16rpx 0px 
+		rgba(0, 0, 0, 0.05);
+	border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+}
+.store-info>image{
+  width: 160rpx;
+  border-radius: 15rpx;
+}
+.info-messages{
+  flex: 1;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.info{
+  	font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 30rpx;
+	letter-spacing: 0px;
+	color: #000000;
+}
+.info-messages>text{
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+.store-other{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}
+.other-noney{
+  font-family: PingFang-SC-Medium;
+	font-size: 22rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ff3300;
+}
+.counts{
+  font-family: PingFang-SC-Regular;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+.other-infos{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 141rpx;
+ 
+
+}
+.other-infos>text{
+  font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #000000;
+   margin-left: 30rpx;
+}
+.other-select>image{
+  	width: 48rpx;
+}
+.other-select{
+  display: flex;
+    padding-right: 30rpx;
+}
+.number-counts{
+  width: 64rpx;
+	height: 46rpx;
+	border: solid 1px #eeeeee;
+  text-align: center;
+  line-height: 46rpx;
+  font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #000000;
+  margin-left: 2rpx;
+  margin-right: 2rpx;
+}
+.other{
+    background-color: #fff;
+    margin-top: 20rpx;
+    height: 170rpx;
+}
+.other-list{
+  border-bottom: 1rpx solid #eee;
+  height: 82rpx;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.other-list{
+  display: flex;
+  justify-content: space-between;
+  font-family: PingFang-SC-Medium;
+	font-size: 22rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #000000;
+}
+.mores-images{
+  display: flex;
+  align-items: center;
+}
+.mores-images>image{
+  width: 12rpx;
+  margin-left: 20rpx;
+}
+.nav-btns{
+  height: 88rpx;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 16rpx 0pxrgba(0, 0, 0, 0.05);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-pay-btn{
+  width: 230rpx;
+	height: 88rpx;
+	background-color: #ff3300;
+	box-shadow: 1px 1px 16rpx 0px 
+		rgba(0, 0, 0, 0.05);
+  font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ffffff;
+  text-align: center;
+  line-height: 88rpx;
+}
+.nav-show{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 60rpx;
+}
+.nav-show .money-show{
+  font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ff3300;
+}
+.nav-show>text{
+  font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #000000;
+}
+.in-image{
+  width: 48rpx;
+}

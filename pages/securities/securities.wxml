@@ -1,0 +1,25 @@
+<!--pages/securities/securities.wxml-->
+<view class='item-conter' wx:for="{{free}}" wx:key="{{index}}">
+  <image src='../../images/tos.png' mode='widthFix'></image>
+  <view class='itme-list'>
+      <view class='contes'>
+ 
+          <view class='money'>
+            <text class='money-text'>￥{{item.sub_price}} 红包</text>
+            <text>订单满{{item.min_price}}可以用</text>
+          </view>
+  
+          <view class='store-name'>
+            发行店铺：????
+          </view>
+
+          <view class='store-name'>
+            有效期 <text>{{item.begintime}} - {{item.endtime}}</text> 
+          </view>
+      </view>
+
+      
+      <view class='get-btn' bindtap='get_btn' data-id="{{item.id}}">领取</view>
+     
+  </view>
+</view>

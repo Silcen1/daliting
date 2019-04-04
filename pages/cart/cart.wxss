@@ -1,0 +1,234 @@
+page{
+  padding-bottom: 90rpx;
+}
+.shop-status{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 345rpx;
+}
+.shop-status>image{
+  width:305rpx;
+}
+.shop-car-text{
+  margin-top:30rpx;
+	font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 38rpx;
+	color: #333333;
+}.select-click-btn{
+  margin-top:59rpx;
+	width: 160rpx;
+	height: 64rpx;
+	border-radius: 32rpx;
+  text-align: center;
+	border: solid 1rpx #ff3300;
+	font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 64rpx;
+	color: #ff3300;
+}
+.list{
+  height:241rpx;
+  padding-left:30rpx;
+  padding-right:30rpx;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+/* 编辑标题 */
+.edit_btn{
+  position: absolute;
+  font-size: 26rpx;
+  color: #888;
+  right: 30rpx;
+}
+/* 单选状态 */
+.radio_chek{
+    width:40rpx;
+    height:40rpx;
+}
+/* 列表商品图片 */
+.list_img{
+  height:61px;
+  width:160rpx;
+  display:inline-block;
+  overflow:hidden;
+}
+/* 列表规格 */
+.cart_g_name{
+font-family:PingFang-SC-Regular;
+font-size:24rpx;
+font-weight:normal;
+font-stretch:normal;
+color:#999999;
+
+}
+/* 列表商品名称 */
+.list_name{
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 30rpx;
+	color: #000000;
+}
+/* 列表商品价格 */
+ .list_price{
+  font-size: 22rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #ff3300;
+}
+
+/* 列表商品删除 */
+.list_del{
+    position: absolute;
+    right: 220rpx;
+    bottom: 20rpx;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 44rpx;
+}
+/* 固定底部 */
+.cont_bot{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 104rpx;
+    line-height:104rpx;
+    background: #fff;
+    border-top: 2rpx solid #ebebeb;
+}
+/* 全选ICON */
+.total-select{
+    position: absolute;
+    left: 30rpx;
+    top: 34rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+/* 全选标题 */
+.sel_count_name{
+  position: absolute;
+  left: 90rpx;
+  top: 6rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+/* 合计金额 */
+.count_price{
+ position: absolute;
+ font-size:28rpx;
+ left: 200rpx;
+ color: #aaa;
+}
+.count_price text{
+  font-size: 34rpx;
+  color: #D66058;
+}
+/* 购物车为空 */
+.list_none{
+    padding:40rpx 0;
+    color: #999;
+    text-align: center;
+}
+/* 提交 */
+.submit{
+  position: absolute;
+  right: 25rpx;
+  top: 30rpx;
+  width: 120rpx;
+	height: 48rpx;
+	background-color: #ff3300;
+	border-radius: 24rpx;
+  line-height: 48rpx;
+  font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ffffff;
+  text-align: center;
+  margin-left: 16rpx;
+}
+.deit-btn{
+  position: absolute;
+  right: 166rpx;
+  top: 30rpx;
+  width: 120rpx;
+	height: 48rpx;
+	background-color: #ff3300;
+	border-radius: 24rpx;
+  line-height: 48rpx;
+  font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ffffff;
+  text-align: center;
+  margin-left: 16rpx;
+}
+.navigator-hover{
+    background: none;
+}
+.stote-info{
+  width: 620rpx;
+	height: 220rpx;
+	background-color: #ffffff;
+	box-shadow: 1rpx 1rpx 16rpx 0px 
+	rgba(0, 0, 0, 0.05);
+	border-radius: 25rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding:15rpx 15rpx;
+  margin-left: 30rpx;
+  position: relative;
+} 
+.info-msg{
+  margin-left: 30rpx;
+  height:100%;
+  padding:30rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+/*数量加减*/
+.addbtn{
+  width:48rpx;
+  height: 26px;
+}
+.carts-num{
+  display: flex; 
+  position: absolute;
+  right: 17rpx;
+  bottom: 17rpx;
+  }
+.view_text_center{
+  border: 1rpx solid #ebebeb;
+  font-size: 30rpx;  
+  display: inline-block;
+  color: #333;
+  height: 48rpx;
+  line-height: 50rpx;
+  width: 76rpx; 
+  text-align: center
+  }
+.carts-num .minus, .carts-num .plus{margin: 10rpx; border: 1rpx solid #ebebeb;color: #000; text-align: center;height: 50rpx;  line-height: 50rpx; width: 40rpx;}
+.carts-num .minus{font-size: 34rpx;}
+/* .carts-num .minus.disabled{color: red;} */
+.carts-num .plus{font-size: 34rpx;}
+.up{
+  display: none
+}

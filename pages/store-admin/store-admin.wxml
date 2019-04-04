@@ -1,0 +1,89 @@
+<view class='share'>
+    
+    <image src='{{list.shop.header_bg}}' mode='widthFix' class='bg'></image>
+
+    <view class='share-nav'>
+        <image src='../../images/share.png' mode='widthFix' class='share-icon'></image>
+        <view class='open'>
+          <image src='../../images/open.png' mode='widthFix' class='share-icon-open'></image>
+        </view>
+        <input placeholder='搜索你的商品' class='placeholder' bindinput='search_input' value='{{search}}' bindconfirm="search_detail"></input>
+    </view>
+
+    <view class='logo'>
+      <image src='{{list.shop.logo}}' mode='widthFix'></image>
+    </view>
+    <view class='logo-store-name'>
+       {{list.shop.name}}
+    </view>
+</view>
+
+<view class="container" wx:if="{{list.coupon_list.length!=0}}">
+
+  <view class = "scroll-views-images">
+      <scroll-view scroll-x style="width: auto;overflow:hidden;">
+          <view class = "select-item-view " bindtap="go_ecurities" wx:for="{{list.coupon_list}}" wx:key="{{index}}">
+              <view class='select-view-sors'>
+                  <view class='select-view-sors-money'>
+                      <text>￥50</text>
+                  </view>
+                  <view class='class-sors'>
+                        <view>订单满200可以用</view>
+                        <view>2018.12.12 - 2018.12.30</view>
+                        <view>订单满200可以用</view>
+                  </view>
+                  <view class='get-btn-sors'>
+                  
+                      <text class='get-sors-btn'>领取</text>
+                  </view>
+              
+              </view>
+          </view>
+      </scroll-view>
+    </view>
+</view>
+
+
+
+
+<!-- <view class="container">
+
+  <view class = "scroll-views">
+      <scroll-view scroll-x style="width: auto;overflow:hidden;">
+          <text class = "select-item {{type==0?'select-btn':''}}" bindtap='select_item' data-id='0'>全部</text>  
+          <text class = "select-item {{type==1?'select-btn':''}}" bindtap='select_item' data-id='1'>玉器</text>   
+          <text class = "select-item {{type==2?'select-btn':''}}" bindtap='select_item' data-id='2'>古董</text>    
+          <text class = "select-item {{type==3?'select-btn':''}}" bindtap='select_item' data-id='3'>珠宝</text>     
+          <text class = "select-item {{type==4?'select-btn':''}}" bindtap='select_item' data-id='4'>钱币</text>    
+          <text class = "select-item {{type==5?'select-btn':''}}" bindtap='select_item' data-id='5'>钱币</text>     
+          <text class = "select-item {{type==6?'select-btn':''}}" bindtap='select_item' data-id='6'>邮票</text>  
+          <text class = "select-item {{type==7?'select-btn':''}}" bindtap='select_item' data-id='7'>玉器</text>   
+          <text class = "select-item {{type==8?'select-btn':''}}" bindtap='select_item' data-id='8'>古董</text>    
+          <text class = "select-item {{type==9?'select-btn':''}}" bindtap='select_item' data-id='9'>珠宝</text>     
+          <text class = "select-item {{type==10?'select-btn':''}}" bindtap='select_item' data-id='10'>钱币</text>    
+          <text class = "select-item {{type==11?'select-btn':''}}" bindtap='select_item' data-id='11'>钱币</text>         
+      </scroll-view>
+    </view>
+</view> -->
+
+
+<view  class='list-store-box'>
+  
+
+  <view class='list-items' catchtap="detail" wx:for="{{list.goods_list}}" wx:key="{{index}}" data-id="{{item.id}}">
+          <image src='{{item.cover_pic}}' mode='widthFix'></image>
+          <text>{{item.name}}</text>
+          <view class='other-info'>
+             <view>
+                <text class='noney'>￥{{item.price}}</text>
+                <!-- <text style='text-decoration: line-through'>￥388</text> -->
+             </view>
+
+              <!-- <text>已售100件</text> -->
+
+          </view>
+  </view>
+
+
+</view>
+

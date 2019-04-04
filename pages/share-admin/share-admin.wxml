@@ -1,0 +1,125 @@
+<!--pages/bargain-admin/bargain-admin.wxml-->
+<view class='select'>
+    <image src='../../images/bg.jpg' mode='widthFix' style='width:100%'></image>
+    <view class='select-message'>
+
+      <image src='../../images/title.png'  mode='widthFix' style='width: 416rpx;'></image>
+
+      <view class='select-conter'>
+
+          <view  class='user-add'>
+              <image src='../../images/header.png' mode='widthFix'></image>
+              <view class='user-text'>
+                  <view><text>(阿希) </text> 正在参加砍价活动</view>
+              </view>
+          </view>
+
+          <view class='store'>
+                  <image src='../../images/tops.png' mode='widthFix'></image>
+                  <view class='store-info'>
+                      <view class='store-titles'>创意实用闺蜜特别的浪漫小圣诞节暖手宝圣诞节暖手宝</view>
+                      <view class='store-other'>
+                          <text>仅剩300件</text>
+                          <view class='store-money'>
+                            <text>最低价可砍至￥</text>
+                            <text style='font-size: 36rpx;'>150</text>
+                          </view>
+                      </view>
+                  </view>
+          </view>
+
+          <view >
+
+              <view class='set-progress-box'>
+                    <view class='box-set'>
+                        <image src='../../images/value.png' style='width:160rpx;' mode='widthFix'></image>
+                        <text>已砍0元</text>
+                    </view>
+                    <view class='progress-box'>
+                        <view class='progress'></view>
+                        <view class='progress-red'></view>
+                    </view>
+
+              </view>
+
+
+              <view class='times'>
+                  <text>距结束还有</text>
+                  <view class='time-info'>
+                    <view>23</view>
+                    <view>23</view>
+                    <view>23</view>
+                  </view>
+              </view>
+
+          </view>
+
+
+      </view>
+
+      
+    </view>
+    <view class='tips'>
+        <image src='../../images/tip.png' mode='widthFix'  style='width: 308rpx;'></image>
+    </view>
+
+
+    <!-- <view class='tips'>
+        <text class='message-tips'>暂无砍价记录~</text>
+    </view> -->
+
+    <view>
+        <view class='list-item'>
+            <image src='../../images/header.png' mode='widthFix' ></image>
+            <view class='select-items'>
+              <text class='name'>小胡</text>
+              <text class="money">已砍30元</text>
+            </view>
+        </view>
+        <view class='list-item'>
+            <image src='../../images/header.png' mode='widthFix' ></image>
+            <view class='select-items'>
+              <text class='name'>小胡</text>
+              <text class="money">已砍30元</text>
+            </view>
+        </view>
+
+        <view class='list-item'>
+            <image src='../../images/header.png' mode='widthFix' ></image>
+            <view class='select-items'>
+              <text class='name'>小胡</text>
+              <text class="money">已砍30元</text>
+            </view>
+        </view>
+    </view>   
+
+
+</view>
+
+<view class='pay-bty'>
+
+      <view class='gosty'>帮Ta砍价</view>
+</view>
+
+<view class='alert-windows'>
+
+    <view class='alert'>
+        
+        <view class='alert-images'>
+            <image src='../../images/money.png' mode='widthFix' style='width: 238rpx;'></image>
+        </view>
+        <view class='alert-list'>
+              <text class='title'>恭喜！</text>
+              <text class='title-message'>您成功帮好友砍掉</text>
+              <text style='color: #ff3300;font-size: 36rpx;margin-top:15rpx;'>￥30</text>
+        </view>
+
+
+        <view class='btn-alert'>
+            <view class='isok'>知道了</view>
+            <view class='go-alert'>发起我的砍价</view>
+        </view>
+
+    </view>
+
+</view>

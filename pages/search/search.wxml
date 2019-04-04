@@ -1,0 +1,20 @@
+<view class='share'>
+    <view class='share-nav'>
+        <image src='../../images/share.png' mode='widthFix' class='share-icon'></image>
+        <view class='open'>
+          <image src='../../images/open.png' mode='widthFix' class='share-icon-open'></image>
+        </view>
+        <input placeholder='搜索你的商品' class='placeholder' bindinput='search_input' value='{{search}}' focus="{{inputShowed}}" bindconfirm="search_detail"></input>
+    </view>
+     <view class='search-btn' bindtap='search_detail'>搜索</view>
+</view>
+
+<view class='share-return'>
+    <view class="share-item">
+      <text>搜索历史</text>
+      <image src='../../images/icon-delete.png' bindtap='delhistory'></image>
+    </view>
+    <view class='return-list'>
+        <text wx:for="{{searchRecord}}" wx:key="{{index}}" bindtap='select' data-item="{{item.value}}">{{item.value}}</text>
+    </view>
+</view>

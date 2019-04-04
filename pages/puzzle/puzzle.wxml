@@ -1,0 +1,41 @@
+<view class='share'>
+    <view class='share-nav' bindtap='search'>
+        <image src='../../images/share.png' mode='widthFix' class='share-icon'></image>
+        <view class='open'>
+          <image src='../../images/open.png' mode='widthFix' class='share-icon-open'></image>
+        </view>
+        <input placeholder='搜索你的商品' class='placeholder' value="{{name}}"></input>
+    </view>
+</view>
+
+
+
+<view  class='list-store-box'>
+  
+
+  <view class='list-items' bindtap="go_detail" wx:for="{{list}}" wx:key="{{index}}" data-id='{{item.id}}' data-goods_id='{{item.goods_id}}'>
+          <view class="img"><image src='{{item.pic_url||item.cover_pic}}' mode='widthFix'></image></view>
+          <text class='list-item-times' wx:if="{{detail==2}}">距结束{{countDownHour}}：{{countDownMinute}}：{{countDownSecond}}</text>
+          <image src='../../images/boom.png' class="boom" wx:if="{{item.boom}}"></image>
+          <text>{{item.name}}</text>
+          <view class='other-info'>
+             <view>
+                <text class='noney' wx:if="{{!item.miaosha_price}}"><text class="min">￥</text>{{item.price}}</text>
+                <text class='noney'wx:else><text class="min">秒杀价￥</text>{{item.miaosha_price}}</text>
+                <text style='text-decoration: line-through' wx:if="{{detail==3}}">￥{{item.original_price}}</text>
+             </view>
+              <text wx:if="{{detail==0}}">{{item.group_num}}人团</text>
+              <text wx:if="{{detail==2&&item.miaosha_num.length==0}}">已售{{item.sales}}</text>
+              <text wx:if="{{detail==1}}">已售{{item.sale}}</text>
+              <text wx:if="{{detail==2}}">仅剩{{item.miaosha_num}}</text>
+              <text wx:if="{{detail=='分类列表'}}">已售{{item.sales}}</text>
+          </view>
+    </view>
+
+
+
+
+
+</view>
+
+<view class="nonefound" wx:if="{{list.length==0}}">暂无商品</view>

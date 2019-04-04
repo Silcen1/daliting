@@ -1,0 +1,34 @@
+/* pages/upload/upload.wxss */
+.ui_uploader_cell{
+  display: flex;
+  width:100%;
+}
+.ui_uploader{
+ width: 80px;
+	height: 80px;
+	border-radius: 10px;
+	border: solid 1px #eeeeee;
+}
+.ui_uploader image{
+  width:120rpx;
+  height:120rpx;
+  padding-top:20rpx;
+  padding-left:20rpx;
+}
+.ui_uploader_item{
+  width:160rpx;
+  height:160rpx;
+  border-radius: 10px;
+ 	border: solid 1px #eeeeee;
+   display: flex;
+   flex-flow: column;
+}
+.ui_uploader_item  image{
+ width:120rpx;
+ height:120rpx;
+}
+.ui_uploader_item_icon{
+  padding-left:120rpx;
+  width:30rpx;
+  height:30rpx;
+}

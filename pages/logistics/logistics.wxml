@@ -1,0 +1,63 @@
+<!--pages/logistics/logistics.wxml-->
+<view class='top-info'>
+   <view class='list-titles'>
+        <text>物流公司</text>
+        <text class='info'>{{list.express}}</text>
+   </view>
+   <view class='list-titles'>
+        <text> 快递单号</text>
+        <text class='info'>{{list.express_no}}</text>
+  
+   </view>
+
+   <view class='list-titles'>
+        <text> 联系电话</text>
+        <text class='info'>暂无数据</text>
+   </view>
+
+</view>
+
+<view class='address-box'>
+
+    <view class='address-listd'>
+
+        <view class='list' wx:if="{{list.status_text=='已签收'}}">
+        
+            <view class='select-time'>
+              <view>日期</view>
+              <view class='items'>时间</view>
+            </view>
+
+            <view class='icon'> 
+              <image src='../../images/info-true.png' mode='widthFix'></image>
+            </view>
+            
+            <view class='address-infos'>
+              <view>{{list.status_text}}</view>
+              <text>暂无数据</text>
+            </view>
+
+        </view>
+
+        <view class='list' wx:for="{{time}}" wx:key="{{index}}">
+        
+            <view class='select-time'>
+              <view>{{item.date}}</view>
+              <view class='items'>{{item.time}}</view>
+            </view>
+
+            <view class='icon'> 
+              <image src='../../images/info-false.png' mode='widthFix'></image>
+            </view>
+            
+            <view class='address-infos'>
+              <view>{{item.detail}}</view>
+              <text>暂无数据</text>
+            </view>
+
+        </view>
+
+
+      </view>
+</view>
+

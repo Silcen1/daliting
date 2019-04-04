@@ -1,0 +1,57 @@
+<!--pages/user-self/user-self.wxml-->
+<view  class='user-info'>
+
+  <view class='user-item-user'>
+     
+      <view class='usre-haders'>
+            <text>头像</text>
+             
+             <image src='../../images/headers.png' mode='widthFix'></image>
+      </view>
+
+      <image src='../../images/more-user.png' mode='widthFix'></image>
+  </view>
+
+  <view class='item-username'>
+
+      <view class='usre-haders'>
+            <text>昵称</text>
+             
+            <text class='user-other'>阿希</text>
+      </view>
+
+
+      <image src='../../images/more-user.png' mode='widthFix'></image>
+
+  </view>
+
+  <view class='item-username'>
+
+      <view class='usre-haders'>
+            <text>手机号</text>
+             
+            <text  class='user-other'>13500001234</text>
+      </view>
+
+
+      <image src='../../images/more-user.png' mode='widthFix'></image>
+
+  </view>
+
+    <view class='item-username'>
+
+      <view class='usre-haders'>
+            <text>修改密码</text>
+             
+
+      </view>
+
+
+      <image src='../../images/more-user.png' mode='widthFix'></image>
+
+  </view>
+
+
+
+
+</view>

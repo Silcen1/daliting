@@ -1,0 +1,47 @@
+/* pages/prize-list/prize-list.wxss */
+page{
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  padding-top: 30rpx;
+  flex-direction: column;
+  align-items: center;
+}
+.get-list{
+  width: 120rpx;
+	height: 64rpx;
+	background-color: #ff3300;
+	border-radius: 32rpx;
+  font-family: PingFang-SC-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 64rpx;
+	letter-spacing: 0px;
+	color: #ffffff;
+  text-align: center;
+ 
+
+}
+.list-item{
+  display: flex;
+  align-items: center;
+  width: 630rpx;
+	height: 180rpx;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 16rpx 0px 
+		rgba(0, 0, 0, 0.05);
+	border-radius: 25rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+.list-item>image{
+  	width: 120rpx;
+}
+.contents{
+flex: 1;
+}
+.contents{
+  padding-left: 30rpx;
+}

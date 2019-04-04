@@ -1,0 +1,21 @@
+<!--pages/prize-admin/prize-admin.wxml-->
+<view class='top'>
+    <image src='../../images/setbg.png' mode='widthFix' style='width:100%'></image>
+    <image src='../../images/set.png' mode='widthFix' style='width: 191rpx;' class='list' bindtap='mine_prize'></image>      
+</view>
+<view class="container-out">
+      <view class="circle" wx:for="{{circleList}}" wx:key="{{index}}" style="top:{{item.topCircle}}rpx;left:{{item.leftCircle}}rpx;background-color: {{(index%2==0)?colorCircleFirst:colorCircleSecond}};"></view>
+      <view class="container-in">
+        <view class="content-out" wx:for="{{awardList}}" style="top:{{item.topAward}}rpx;left:{{item.leftAward}}rpx;background-color: {{(index==indexSelect)?colorAwardSelect:colorAwardDefault}};" wx:key="{{index}}">
+          <image class="award-image" src="{{item.imageAward.url}}"></image>
+        </view>
+        <view class="start-btn" bindtap="startGame">
+          <image src="../../images/gits.png"></image>
+        </view>
+      </view>
+</view> 
+<view class='crul'>
+      <view class="crul_rule" bindtap="look_rule">活动规则>></view>
+</view>
+
+<MsgBox id="msgbox" award="{{award}}" name="{{name}}"></MsgBox>

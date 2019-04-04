@@ -1,0 +1,190 @@
+<!--pages/store-info/store-info.wxml-->
+<view class='tops'>
+  <image src='../../images/tops.png' mode='widthFix'></image>
+</view>
+
+
+<view class='store-infos'>
+    <view class='hot-nav'>
+        <text class='old-new'>￥688</text>
+         <text class='old-money'>￥1688</text>
+         <image src='../../images/hot.png' mode='widthFix' class='hot'></image>
+    </view>
+    <view class='text-message'>创意实用闺蜜特别的浪漫小圣诞节暖手宝充电宝</view>
+    <view class='message-box'>充电宝 暖手宝 两用 浪漫萌宠送女生送温暖</view>
+    <view class='box-select'>
+        <text>已售152件</text>
+        <text>广东广州</text>
+    </view> 
+</view>
+
+<view class='count'>
+
+  <view class='count-nav'>
+
+        <view class='select-text'>
+            <text>已选</text>
+            <text class='select-default'>默认</text>
+        </view>
+
+        <image src='../../images/more-user.png' mode='widthFix' ></image>
+  </view>
+
+   <view class='count-nav'>
+
+        <view class='select-text'>
+            <text>数量</text>
+            <view class='select-counts'> 
+              <image src='../../images/nuadd.png' mode='widthFix'></image>
+              <view class='select-number'>
+              1
+              </view>
+              <image src='../../images/add.png'  mode='widthFix'></image>
+            </view>
+        </view>
+
+       <view>库存：300件</view>
+  </view>
+
+</view>
+
+<view class='puzzle-nav'>
+
+      <view class='nav-puzz'>
+          <image src='../../images/header.png'  mode='widthFix'></image>
+          <view>(5人拼团，1人 <text style="color:red">免费</text> )</view>
+      </view>
+
+       <view class='add-btns-add'>
+          <view>还差 <text style="color:red">3人</text></view>
+          <view class='select-add-btns'>
+              去参团
+          </view>
+      </view>
+
+
+</view>
+
+<view class='select-click'>
+
+  <view class=" {{showinfo == 'true'?'selectclick select-item':' select-item' }}" catchtap='selectBtn' data-select='true'>
+      商品介绍
+  </view>
+
+   <view class=" {{showinfo == 'false'?'selectclick select-item':' select-item' }}"  catchtap='selectBtn' data-select='false'>
+      用户评价
+  </view>
+
+
+</view>
+
+
+
+<!-- 商品介绍 -->
+<view hidden="{{showinfo == 'false'}}">
+1
+</view>
+
+
+<!-- 用户评价 -->
+
+<view hidden="{{showinfo == 'true'}}" class='list'>
+
+        <view class='list-item'>
+              <view class='select-tops'>
+                  <image src='../../images/header.png' mode='widthFix'></image>
+                  <text>阿希阿希</text>
+              </view>
+
+
+              <view class='message'>
+              宝贝很不错，看着挺可爱的，拿在手里也小巧，既能暖手又能当充电宝用，这点不错，包装方面，店家也比较用心，准备送给女朋友，我想应该会满意的，另外客服的服务态度也很噢，喜欢的朋友，可以考虑一下。
+              </view>
+
+              <view class='times'>
+                    2018-12-17  16:49
+              </view>
+
+        </view>
+
+        <view class='list-item'>
+                    <view class='select-tops'>
+                        <image src='../../images/header.png' mode='widthFix'></image>
+                        <text>阿希阿希</text>
+                    </view>
+
+
+                    <view class='message'>
+                    宝贝很不错，看着挺可爱的，拿在手里也小巧，既能暖手又能当充电宝用，这点不错，包装方面，店家也比较用心，准备送给女朋友，我想应该会满意的，另外客服的服务态度也很噢，喜欢的朋友，可以考虑一下。
+                    </view>
+
+                    <view class='times'>
+                          2018-12-17  16:49
+                    </view>
+
+          </view>
+</view>
+
+<view class='store-nav'>
+    <view class='logo'>
+      <image src='../../images/store-logo.png' mode='widthFix'></image>
+      <text>阿希专卖店</text>
+    </view>
+
+    <view class='more-images'>
+      <text>进入店铺</text>
+      <image src='../../images/more-user.png' mode='widthFix'></image>
+    </view>
+</view>
+
+<view class='nav-bar'>
+      <view class='select-home'>
+          <image src='../../images/home.png' mode='widthFix'></image>
+          <text>首页</text>
+      </view>
+
+      <view class='select-home'>
+          <image src='../../images/home.png' mode='widthFix'></image>
+          <text>客服</text>
+      </view>
+
+
+
+      <view class='select-btns'>
+     
+          <view class='select-nav'>
+              发起砍价
+          </view>
+      </view>
+
+
+</view>
+
+<!-- 
+ <view class='alert-windows'>
+
+    <view class='alert'>
+        <image src='../../images/user-add.png' mode='widthFix' class='add-images'></image>
+
+
+        <view class='alert-btns'>
+
+   
+            <view class='windows'>
+               <view class='windowsalert'>
+                <image src='../../images/header.png' mode='widthFix'></image>
+                <image src='../../images/header-iocns.png' mode='widthFix'></image>
+                <image src='../../images/header-iocns.png' mode='widthFix'></image>
+                <image src='../../images/header-iocns.png' mode='widthFix'></image>
+                <image src='../../images/header-iocns.png' mode='widthFix'></image>
+              </view>
+      
+                <view class='tips-conts'>还差   <text>3人</text>  拼团成功</view>
+              </view>
+      
+          <view class='alert-user-add'>
+            参团
+          </view>
+        </view>
+    </view>
+</view>  -->

@@ -1,0 +1,109 @@
+<!--pages/order-info/order-info.wxml-->
+<view class='tops'>
+    <image src='../../images/top-image.png' mode='widthFix' class = "images-top"></image>
+    <view class='tops-margin'>
+      
+      <view class='text-images'>
+        <image src='../../images/icon6.png' mode='widthFix'></image>
+        <text>砍价中</text>
+      </view>
+
+      <text>您的砍价正在进行中，还有23时59分后结束！</text>
+    </view>
+</view> 
+
+<view class='address'>
+
+    <image src='../../images/address-iocn.png' mode='widthFix'></image>
+
+    <view class='messages'>
+          <view class = "select-user">
+            <text>阿希</text>
+            <text>13500001234</text>
+          </view>
+
+          <view class='address-message'>
+            广东省广州市白云区白云公园别墅1335号房前台一楼
+          </view>
+    </view>
+
+
+
+
+</view>
+
+<view class='store'> 
+
+ <view class='store-tops'>
+    <image src='../../images/shop-car-logo.png' class='store-heade' mode='widthFix'></image>
+    <text>阿希专卖店</text>
+     <image src='../../images/shop-car-more.png' class='store-mores' mode='widthFix'></image>
+ </view>
+
+  <view class='item-lists'>
+    <image src='{{list.data.list[2].goods_list[0].goods_pic}}' mode='widthFix'></image>
+    
+    <view class='item-conter'>
+        <view class='conter'>
+              {{list.data.list[2].goods_list[0].goods_name}}
+        </view>
+        <text>规格：{{list.data.list[2].goods_list[0].attr_list[0].attr_name}}</text>
+    </view>
+
+    <view class='select-count'>
+      <text>￥{{list.data.list[2].goods_list[0].price}}</text>
+      <text>x {{list.data.list[2].goods_list[0].num}}</text>
+    </view>
+
+  </view>
+
+</view>
+
+<view class='item-conters'>
+ <view class='select-items '>
+    <text>砍价</text>
+    <text>￥{{bargain.data.bargain_info.money}}</text>
+  </view>
+  <view class='select-items select-message-items'>
+    <text>运费</text>
+    <text>￥15</text>
+  </view>
+
+  <view class='select-money'>
+
+    <text>合计</text>
+    <text class="moneys">￥15</text>
+  
+  </view>
+
+</view>
+
+<view class='tops-tips'>  
+    <view class='top-titls'>
+        订单信息
+    </view>
+    <view class='select-list'>
+        <text>订单编号</text>
+        <text>12132432123768218</text>
+    </view>
+    <view class='select-list'>
+        <text>下单时间</text>
+        <text>12132432123768218</text>
+    </view>
+</view>
+
+<view>
+      
+      <view class='nav-btns'>
+    
+        <view>放弃砍价</view>
+        <view>联系商家</view>
+        <view class='pay-btn'>立即支付</view>
+        <view class='openfriend'>邀请好友</view>
+
+      </view>
+
+
+
+
+</view>

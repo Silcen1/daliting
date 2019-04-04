@@ -1,0 +1,106 @@
+<!--pages/order-info/order-info.wxml-->
+<view class='tops'>
+    <image src='../../images/top-image.png' mode='widthFix' class = "images-top"></image>
+    <view class='tops-margin'>
+      
+      <view class='text-images'>
+        <image src='../../images/icon2.png' mode='widthFix'></image>
+        <text>待商家发货</text>
+      </view>
+
+      <text>商家正在努力为您打包，请耐心等待！</text>
+    </view>
+</view>  
+  
+<view class='address'>
+
+    <image src='../../images/address-iocn.png' mode='widthFix'></image>
+
+    <view class='messages'>
+          <view class = "select-user">
+            <text>{{list.name}}</text>
+            <text>{{list.mobile}}</text>
+          </view>
+
+          <view class='address-message'>
+             {{list.address}}
+          </view>
+    </view>
+
+
+
+
+</view>
+
+<view class='store'> 
+
+ <view class='store-tops' bindtap='go_shop' data-id="{{shop_info.mch.id}}">
+    <image src='../../images/shop-car-logo.png' class='store-heade' mode='widthFix'></image>
+    <text>{{shop_info.mch.name}}</text>
+     <image src='../../images/shop-car-more.png' class='store-mores' mode='widthFix'></image>
+ </view>
+
+  <view class='item-lists'>
+    <image src='{{shop_info.goods_list[0].goods_pic}}' mode='widthFix'></image>
+    
+    <view class='item-conter'>
+        <view class='conter'>
+           {{shop_info.goods_list[0].goods_name}}
+        </view>
+        <text>{{shop_info.goods_list[0].attr_list[0].attr_group_name}}：{{shop_info.goods_list[0].attr_list[0].attr_name}}</text>
+        <text wx:if="{{shop_info.goods_list[0].attr_list[1]}}">{{shop_info.goods_list[0].attr_list[1].attr_group_name}}：{{shop_info.goods_list[0].attr_list[1].attr_name}}</text>
+    </view>
+
+    <view class='select-count'>
+      <text>￥{{shop_info.goods_list[0].price/shop_info.goods_list[0].num}}</text>
+      <text>x  {{shop_info.goods_list[0].num}}</text>
+    </view>
+
+  </view>
+
+</view>
+
+<view class='item-conters'>
+  <view class='select-items'>
+    <text>运费</text>
+    <text>￥{{list.express_price}}</text>
+  </view>
+
+  <view class='select-money'>
+
+    <text>合计</text>
+    <text class="moneys">￥{{list.express_price+shop_info.goods_list[0].price}}</text>
+  
+  </view>
+
+</view>
+
+<view class='tops-tips'>  
+    <view class='top-titls'>
+        订单信息
+    </view>
+    <view class='select-list'>
+        <text>订单编号</text>
+        <text>{{list.order_no}}</text>
+    </view>
+
+    <view class='select-list'>
+        <text>下单时间</text>
+        <text>{{shop_info.addtime}}</text>
+    </view>
+
+     <view class='select-list'>
+        <text>支付时间</text>
+        <text>{{list.addtime}}</text>
+    </view>
+</view>
+
+
+<view class='list-order'>
+    <view class ="order-btns">
+        <view wx:if="{{shop_info.apply_delete==1}}">申请退款中</view>
+        <view wx:else bindtap="quit" data-id="{{list.order_id}}">取消订单</view>
+        <view>联系商家</view>
+        <view bindtap="go_logistics" data-id="{{list.order_id}}">查看物流</view>
+    </view>
+</view>

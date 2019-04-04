@@ -1,0 +1,24 @@
+/* pages/time/time.wxss */
+.over{
+ width: 108rpx;
+	height: 22rpx;
+	font-family: PingFang-SC-Regular;
+	font-size: 22rpx;
+	line-height: 90rpx;
+	color: #fb3449;
+}
+.voteText{
+ width: 20rpx;
+	height:20rpx;
+  font-size:25rpx;
+	background-image: linear-gradient(-45deg, 
+		#ff3301 0%, 
+		#fe9696 100%), 
+	linear-gradient(
+		#f19e41, 
+		#f19e41);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 2rpx;
+  color:aliceblue;
+}
